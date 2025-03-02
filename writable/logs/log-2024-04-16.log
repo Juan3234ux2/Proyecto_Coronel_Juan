@@ -1,0 +1,17 @@
+CRITICAL - 2024-04-16 15:17:21 --> ParseError: syntax error, unexpected token "/"
+in APPPATH\Views\productos.php on line 5.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('productos', [], true)
+ 3 APPPATH\Controllers\BaseController.php(60): view('productos', [...])
+ 4 APPPATH\Controllers\Productos.php(19): App\Controllers\BaseController->cargarVista('productos', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('todos-los-productos')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 15:27:39 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Whey-protein-ENA-2""
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('productos/Whey-protein-ENA-2"')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('productos/Whey-protein-ENA-2"')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

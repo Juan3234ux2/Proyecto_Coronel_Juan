@@ -1,0 +1,10 @@
+CRITICAL - 2024-04-11 18:47:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "contacto.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('contacto.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('contacto', [], true)
+ 3 APPPATH\Controllers\BaseController.php(60): view('contacto', [...])
+ 4 APPPATH\Controllers\Home.php(18): App\Controllers\BaseController->cargarVista('contacto', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->contacto()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

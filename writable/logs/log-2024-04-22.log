@@ -1,0 +1,10 @@
+CRITICAL - 2024-04-22 18:32:27 --> ParseError: syntax error, unexpected token "echo", expecting "," or ";"
+in APPPATH\Views\productos.php on line 19.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('productos', [], true)
+ 3 APPPATH\Controllers\BaseController.php(60): view('productos', [...])
+ 4 APPPATH\Controllers\Productos.php(20): App\Controllers\BaseController->cargarVista('productos', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('todos-los-productos')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,1566 @@
+INFO - 2024-05-01 16:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 16:24:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/eliminados.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/eliminados.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/eliminados', [], true)
+ 3 APPPATH\Controllers\BaseController.php(81): view('admin/eliminados', [...])
+ 4 APPPATH\Controllers\Productos.php(49): App\Controllers\BaseController->cargarVistaAdmin('eliminados', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:25:01 --> ErrorException: Undefined array key "nombre_categoria"
+in APPPATH\Views\admin\productos\eliminados.php on line 24.
+ 1 APPPATH\Views\admin\productos\eliminados.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_categoria"', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\eliminados.php', 24)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\eliminados.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/productos/eliminados', [], true)
+ 5 APPPATH\Controllers\BaseController.php(81): view('admin/productos/eliminados', [...])
+ 6 APPPATH\Controllers\Productos.php(49): App\Controllers\BaseController->cargarVistaAdmin('productos/eliminados', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 16:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 16:26:47 --> BadMethodCallException: Call to undefined method App\Models\ProductosModel::obtenerProductPorID
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Productos.php(33): CodeIgniter\Model->__call('obtenerProductPorID', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->verProducto('proteina-2kg-ena-18')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:26:54 --> BadMethodCallException: Call to undefined method App\Models\ProductosModel::obtenerProductPorID
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\Productos.php(33): CodeIgniter\Model->__call('obtenerProductPorID', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->verProducto('proteina-2kg-ena-18')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 16:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:28:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:30:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:33:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:37:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:37:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 16:42:20 --> ErrorException: Array to string conversion
+in APPPATH\Models\ProductosModel.php on line 43.
+ 1 APPPATH\Models\ProductosModel.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Models\\ProductosModel.php', 43)
+ 2 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:43:41 --> ErrorException: Array to string conversion
+in APPPATH\Models\ProductosModel.php on line 43.
+ 1 APPPATH\Models\ProductosModel.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Models\\ProductosModel.php', 43)
+ 2 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-01 16:44:03 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `CASE WH...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `CASE WH...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `CASE WH...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `CASE WH...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 16:44:03 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:03 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `CASE WHEN productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-01 16:44:23 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 16:44:23 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:23 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-01 16:44:47 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 16:44:47 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:47 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-01 16:44:49 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 16:44:49 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:49 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-01 16:44:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 16:44:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:44:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-01 16:45:19 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 16:45:19 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:45:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:45:19 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-01 16:45:41 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-01 16:45:41 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:45:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 16:45:41 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nom...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos WHERE activo =` 0, CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca, CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+LEFT JOIN `unidades` ON `productos`.`id_unidad` = `unidades`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(50): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(44): App\Models\ProductosModel->obtenerProductosInactivos()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->productosEliminados()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 16:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:57:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 16:59:30 --> ParseError: syntax error, unexpected variable "$routes"
+in APPPATH\Config\Routes.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(811): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 16:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 16:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 16:59:56 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:00:20 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: wewe\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:00:26 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: holaaa\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:00:28 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: holaaad2d2\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:00:50 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: holaaad2d2\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:00:51 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: holaaa\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:02:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:02:43 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: e3e\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:01 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(11): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:03 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(11): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:04 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(11): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:05 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(11): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:07 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(11): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:09 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(11): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:25 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:25 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:26 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:26 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:27 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:28 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:28 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:29 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:29 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:30 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:30 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:04:30 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 57.
+ 1 APPPATH\Views\templates\header.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Config\Routes.php(10): view('templates/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(963): CodeIgniter\Router\RouteCollection->{closure}('Can\'t find a route for \'get: dashboard/productos/editar/18ass\'.')
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-01 17:06:48 --> Error: Call to undefined method App\Controllers\Home::404()
+in SYSTEMPATH\CodeIgniter.php on line 943.
+ 1 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 2 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:08:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/404.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/404.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('front/404', [], true)
+ 3 APPPATH\Controllers\BaseController.php(68): view('front/404', [...])
+ 4 APPPATH\Controllers\Home.php(40): App\Controllers\BaseController->cargarVista('404', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 6 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:13:23 --> ErrorException: Undefined variable $marcas
+in APPPATH\Views\admin\productos\editar_producto.php on line 22.
+ 1 APPPATH\Views\admin\productos\editar_producto.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marcas', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php', 22)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/productos/editar_producto', [], true)
+ 5 APPPATH\Controllers\BaseController.php(81): view('admin/productos/editar_producto', [...])
+ 6 APPPATH\Controllers\Productos.php(181): App\Controllers\BaseController->cargarVistaAdmin('productos/editar_producto', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->editarProducto('18')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:15:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:15:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:15:53 --> ErrorException: Undefined array key "marca"
+in APPPATH\Views\admin\productos\editar_producto.php on line 20.
+ 1 APPPATH\Views\admin\productos\editar_producto.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "marca"', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php', 20)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/productos/editar_producto', [], true)
+ 5 APPPATH\Controllers\BaseController.php(81): view('admin/productos/editar_producto', [...])
+ 6 APPPATH\Controllers\Productos.php(191): App\Controllers\BaseController->cargarVistaAdmin('productos/editar_producto', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->editarProducto('18')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:20:23 --> ErrorException: Undefined array key "nombre_categori"
+in APPPATH\Views\admin\productos\editar_producto.php on line 33.
+ 1 APPPATH\Views\admin\productos\editar_producto.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_categori"', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/productos/editar_producto', [], true)
+ 5 APPPATH\Controllers\BaseController.php(81): view('admin/productos/editar_producto', [...])
+ 6 APPPATH\Controllers\Productos.php(191): App\Controllers\BaseController->cargarVistaAdmin('productos/editar_producto', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->editarProducto('18')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:22:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:24:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:28:40 --> ParseError: Unclosed '{' on line 35
+in APPPATH\Views\admin\productos\editar_producto.php on line 100.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/productos/editar_producto', [], true)
+ 3 APPPATH\Controllers\BaseController.php(81): view('admin/productos/editar_producto', [...])
+ 4 APPPATH\Controllers\Productos.php(191): App\Controllers\BaseController->cargarVistaAdmin('productos/editar_producto', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->editarProducto('18')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:36:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 17:46:22 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Productos.php on line 34.
+ 1 APPPATH\Controllers\Productos.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Controllers\\Productos.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->verProducto('todos-los-productos')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 17:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 17:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:03:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:03:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:19:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:19:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:20:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:34:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 18:34:33 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Productos.php on line 34.
+ 1 APPPATH\Controllers\Productos.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Controllers\\Productos.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->verProducto('todos-los-productos')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 18:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 18:39:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:11:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:13:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:19:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:22:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 19:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:25:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-01 20:29:10 --> CodeIgniter\Validation\Exceptions\ValidationException: "is_valid" is not a valid rule.
+in SYSTEMPATH\Validation\Validation.php on line 336.
+ 1 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('is_valid')
+ 2 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('imagen', 'imagen', null, [...], [...])
+ 3 SYSTEMPATH\Controller.php(154): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Productos.php(75): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-01 20:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:31:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:39:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:43:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:44:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:47:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:47:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:49:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:51:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-01 20:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
