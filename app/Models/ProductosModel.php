@@ -6,39 +6,37 @@ use CodeIgniter\Model;
 
 class ProductosModel extends Model
 {
-    protected $table      = 'productos';
+    protected $table = 'productos';
     protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'array';
+    protected $returnType = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nombre', 'precio_venta', 'precio_compra', 'stock', 'contenido', 'id_categoria', 'id_unidad', 'id_marca', 'activo', 'imagen'];
+    protected $allowedFields = ['nombre', 'id_categoria', 'id_marca', 'activo', 'descripcion', 'caracteristicas'];
 
     protected bool $allowEmptyInserts = false;
 
     // Dates
     protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'fecha_alta';
-    protected $updatedField  = 'fecha_edit';
+    protected $dateFormat = 'datetime';
+    protected $createdField = 'fecha_alta';
+    protected $updatedField = 'fecha_edit';
 
     // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
+    protected $validationRules = [];
+    protected $validationMessages = [];
+    protected $skipValidation = false;
 
     protected function agregarJoins()
     {
         return $this
             ->select('productos.*, 
-        CASE WHEN categorias.activo = 0 THEN "No posee" ELSE IFNULL(categorias.nombre, "No posee") END AS nombre_categoria, 
-        CASE WHEN marcas.activo = 0 THEN "No posee" ELSE IFNULL(marcas.nombre, "No posee") END AS nombre_marca,
-        CASE WHEN unidades.activo = 0 THEN "No posee" ELSE IFNULL(unidades.nombre_corto, "No posee") END AS nombre_unidad,')
+             categorias.nombre AS nombre_categoria, 
+             marcas.nombre AS nombre_marca')
             ->join('categorias', 'productos.id_categoria = categorias.id', 'left')
-            ->join('marcas', 'productos.id_marca = marcas.id', 'left')
-            ->join('unidades', 'productos.id_unidad = unidades.id', 'left');
+            ->join('marcas', 'productos.id_marca = marcas.id', 'left');
     }
     public function buscar($busqueda)
     {
@@ -47,6 +45,20 @@ class ProductosModel extends Model
             ->like('productos.nombre', $busqueda)
             ->where('productos.activo = 1')
             ->findAll();
+    }
+    public function filtrarProductos($busqueda, $porPagina, $pagina)
+    {
+        if (empty($busqueda)) {
+            return $this->agregarJoins()->where('productos.activo = 1')->findAll($porPagina, ($pagina - 1) * $porPagina);
+        } else {
+            return $this
+                ->agregarJoins()
+                ->like('productos.nombre', $busqueda)
+                ->orLike('marcas.nombre', $busqueda)
+                ->orLike('categorias.nombre', $busqueda)
+                ->where('productos.activo = 1')
+                ->findAll($porPagina, ($pagina - 1) * $porPagina);
+        }
     }
     public function obtenerProductosActivos()
     {

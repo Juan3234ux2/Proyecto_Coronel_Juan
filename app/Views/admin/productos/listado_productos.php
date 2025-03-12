@@ -7,48 +7,47 @@
         </span>
         <?php
     } ?>
-    <div class="d-flex justify-content-end align-items-center gap-3 mt-3 mb-2 mx-4">
-        <a class="mb-2 btn-crud" href=" <?php echo base_url('dashboard/productos/agregar'); ?>">Agregar Producto</a>
-        <a class="mb-2 btn-crud" style="background-color: rgb(194, 24, 7);"
-            href=" <?php echo base_url('dashboard/productos/eliminados'); ?>">Eliminados</a>
+    <div class="d-flex justify-content-between align-items-center mt-4 mb-2 mx-4">
+        <div class="col-xl-4 col-5">
+            <input type="text" class="form-input-dashboard" placeholder="Buscar por nombre, categoria, marca..."
+                id="buscador">
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <a class="m-0 btn-crud" href=" <?php echo base_url('dashboard/productos/agregar'); ?>">Agregar Producto</a>
+            <a class="m-0 btn-crud" style="background-color: rgb(194, 24, 7);"
+                href=" <?php echo base_url('dashboard/productos/eliminados'); ?>">Eliminados</a>
+        </div>
     </div>
-    <table id="tablaDatos" class="table-dashboard">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio Venta</th>
-                <th scope="col">Precio Compra</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Categoría</th>
-                <th scope="col">Marca</th>
-                <th scope="col" class="text-end px-3">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($productos as $producto) { ?>
-                <tr id="<?= $producto['id']; ?>">
-                    <td><?php echo $producto['nombre']; ?> </td>
-                    <td>$ <?php echo number_format($producto['precio_venta'], 2, ',', '.'); ?> </td>
-                    <td>$ <?php echo number_format($producto['precio_compra'], 2, ',', '.'); ?> </td>
-                    <td><?php echo $producto['stock']; ?> </td>
-                    <td><?php echo $producto['nombre_categoria'] ?> </td>
-                    <td><?php echo $producto['nombre_marca'] ?> </td>
-                    <td>
-                        <div class="d-flex align-items-center gap-2 justify-content-end">
-                            <a class="rounded-btn"
-                                href="<?php echo base_url('dashboard/productos/editar/') . $producto['id']; ?>">
-                                <i class="bi bi-pencil"></i>
-                            </a>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="rounded-btn open-delete-modal" data-id="<?= $producto['id']; ?>">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </div>
-                    </td>
+    <div class="position-relative" id="tableContainer">
+        <div id="table-loading" class="loading-overlay d-none">
+            <div class="spinner-border text-light" role="status"></div>
+        </div>
+        <table class="table-dashboard">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col" class="text-end px-3">Acciones</th>
                 </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between gap-2 mx-4 align-items-center py-2">
+            <div class="d-flex gap-2 align-items-center">
+                <span class="fw-semibold" style="font-size: 14px; min-width: fit-content;">Por Página</span>
+                <select class="form-select-dashboard" id="porPagina">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div id="indicadoresPaginacion" class="d-flex gap-2">
+
+            </div>
+        </div>
+    </div>
 </section>
 
 <div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true">
@@ -64,40 +63,9 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" id="btn-eliminar" style="background-color: rgb(160, 13, 0); color: white;"
-                    class="btn eliminar-producto" data-bs-dismiss="modal">Eliminar</button>
+                    class="btn" onclick="deleteProduct()" data-bs-dismiss="modal">Eliminar</button>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        var currentProductId;
-
-        $('.open-delete-modal').on('click', function () {
-            currentProductId = $(this).data('id');
-            $('#btn-eliminar').data('id', currentProductId);
-            $('#modalEliminar').modal('show');
-        });
-
-        $('#btn-eliminar').on('click', function () {
-            var idProducto = $(this).data('id');
-            console.log(idProducto);
-            $.ajax({
-                url: '<?php echo base_url('dashboard/productos/eliminar/'); ?>',
-                type: 'POST',
-                data: {
-                    id: idProducto,
-                },
-                success: function (response) {
-                    if (response.status === 'success') {
-                        $('#' + idProducto).remove();
-                        $('#modalEliminar').modal('hide');
-                    } else {
-                        alert('Error al borrar el producto');
-                    }
-                }
-            });
-        });
-    });
-</script>
+<script src="<?php echo base_url('assets/js/crud/productos.js'); ?>"></script>

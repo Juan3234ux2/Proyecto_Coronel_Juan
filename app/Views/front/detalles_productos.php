@@ -1,4 +1,13 @@
-<section class="container-xl" style="margin-top: 180px;">
+<script>
+    const cambiarSabor = (select) => {
+        if (!select) return;
+        const saborProducto = document.getElementById("sabor-producto");
+        if (saborProducto) {
+            saborProducto.textContent = select.value;
+        }
+    }
+</script>
+<section class="container-xl" style="margin-top: 130px;">
     <div class="row">
         <!--Imagen del producto-->
         <div class="col-12 col-lg-6">
@@ -48,19 +57,17 @@
         </div>
         <!--Descripcion del producto-->
         <div class="col-12 col-lg-6">
-            <div class="mx-4 mt-3">
+            <div class="mx-4 mt-5">
                 <!--Titulo del producto-->
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3 class=" my-3" style="font-size:2.4rem; font-weight: 800"><?php echo $nombreProducto; ?></h3>
-                </div>
+                <h3 class="mb-3" style="font-size:2.4rem; font-weight: 800"><?php echo $nombreProducto; ?></h3>
                 <div class="mt-4">
-                    <ul class="px-3 mb-4" style="font-size:13px; line-height: 22px;">
-                        <li class="py-1 fw-bolder"><?php echo $producto['nombre_categoria']; ?> de maxima pureza.</li>
-                        <li class="py-1 fw-bolder">Contenido:
+                    <ul class="px-3 mb-4 d-flex flex-column fw-bold" style="font-size:13px; gap: 10px;">
+                        <li><?php echo $producto['nombre_categoria']; ?> de maxima pureza.</li>
+                        <li>Contenido:
                             <?php echo $producto['contenido'] . ' ' . $producto['nombre_unidad']; ?>
                         </li>
-                        <li class="py-1 fw-bolder">Marca: <?php echo $producto['nombre_marca']; ?> </li>
-                        <li class="py-1 fw-bolder">Mejora el rendimiento físico.</li>
+                        <li>Marca: <?php echo $producto['nombre_marca']; ?> </li>
+                        <li>Mejora el rendimiento físico.</li>
                     </ul>
                     <div class="d-flex flex-column gap-2">
                         <form action="<?php echo base_url('productos/agregarcarrito'); ?>" method="post">
@@ -69,7 +76,7 @@
                             </span>
                             <select onchange="cambiarSabor(this)" id="sabor" class="w-100 mt-2 mb-3" name="sabor"
                                 style="padding: 13px; border-radius: 6px;">
-                                <option value="Banana" selected>Banana</option>
+                                <option value="Banana">Banana</option>
                                 <option value="Manzana">Manzana</option>
                                 <option value="Chocolate">Chocolate</option>
                             </select>
@@ -91,12 +98,12 @@
                             </span>
                             <div class="d-flex cantidad mt-2">
                                 <input type="hidden" name="id" value="<?php echo $producto['id'] ?>">
-                                <button type="button" id="btn-disminuir-cantidad" class="btn-cantidad mx-0 px-0"><i
-                                        class="bi bi-dash"></i></button>
-                                <input class="mx-0 input-cantidad-detalles" type="number" name="cantidad" value="1"
+                                <button type="button" onclick="cartFunctions.disminuirCantidad()"
+                                    class="btn-cantidad mx-0 px-0"><i class="bi bi-dash"></i></button>
+                                <input class="mx-0 input-cantidad" type="number" name="cantidad" value="1"
                                     id="cantidad-producto">
-                                <button type="button" id="btn-aumentar-cantidad" class="btn-cantidad mx-0 px-0"><i
-                                        class="bi bi-plus"></i></button>
+                                <button type="button" onclick="cartFunctions.aumentarCantidad()"
+                                    class="btn-cantidad mx-0 px-0"><i class="bi bi-plus"></i></button>
                             </div>
                     </div>
                     <div class="mt-2">
@@ -115,7 +122,7 @@
                             <button disabled id="agregar-producto" style="background-color: rgb(228, 206, 8);"
                                 class="btn-enviar-datos w-100 mt-4">Agotado</button>
                         <?php } else { ?>
-                            <button type="submit" id="agregar-producto" class="btn-enviar-datos w-100 mt-4">Agregar al
+                            <button type="submit" class="btn-enviar-datos w-100 mt-4">Agregar al
                                 carrito</button>
                         <?php } ?>
                     </div>

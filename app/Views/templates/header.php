@@ -14,75 +14,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      inputCantidad.forEach(function (input, index) {
-        const precioProducto = document.querySelectorAll(".precio-producto");
-        let etiquetaPrecio = precioProducto[index];
-        const precio = input.getAttribute('data-precio');
-        cambiarPrecio(etiquetaPrecio, precio, input);
-      });
-      actualizarTotal();
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      $('#carrito').on('click', '.eliminar-producto', function () {
-        var boton = $(this);
-        var idProducto = boton.data('id');
-        $.ajax({
-          url: '<?php echo base_url('eliminar-producto-carrito'); ?>',
-          type: 'POST',
-          data: {
-            id: idProducto,
-          },
-          success: function (response) {
-            if (response.status === 'success') {
-              if ($('.lista-productos').children().length === 1) {
-                $('.estado').append(`
-                   <div class="text-center d-flex flex-column my-auto h-100">
-                      <span data-icon="tabler:shopping-cart"
-                      class="iconify position-relative mx-auto text-black fs-1 d-block mt-4 mb-3"></span>
-                      <span class="fw-semibold text-medium">El carrito está vacío</span>
-                      <a class="login-text mt-4 mx-auto" href=" <?php echo base_url('colecciones/todos-los-productos') ?>">Seguir comprando</a>
-                  </div>
-                `);
-              }
-              contenidoCarrito.innerHTML = (parseInt(contenidoCarrito.innerHTML) - 1);
-              $('#' + idProducto).remove();
-              actualizarTotal();
-            }
-          }
-        });
-      });
-      $('#carrito').on('click', '.btn-cantidad-mas', function () {
-        var boton = $(this);
-        var idProducto = boton.data('id');
-        actualizarCantidad(idProducto, 1);
-      });
-      $('#carrito').on('click', '.btn-cantidad-menos', function () {
-        var boton = $(this);
-        var idProducto = boton.data('id');
-        actualizarCantidad(idProducto, -1);
-      });
-
-      function actualizarCantidad(idProducto, cantidad) {
-        $.ajax({
-          url: '<?php echo base_url('productos/agregarcarrito'); ?>',
-          type: 'POST',
-          data: {
-            id: idProducto,
-            cantidad: cantidad
-          },
-          success: function (response) {
-            if (response.status === 'success') {
-              actualizarTotal();
-            }
-          }
-        });
-      }
-    });
-  </script>
+  <script type="module" src="<?php echo base_url('assets/js/cart.js'); ?>"></script>
 </head>
 
 <body class="bg-primary">

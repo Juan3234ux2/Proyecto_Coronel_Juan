@@ -43,7 +43,10 @@ class CarritoController extends Controller
             }
         }
         $this->usuarios->actualizarCarrito($usuarioId, $carrito);
-        return redirect()->back();
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON(['status' => 'success']);
+        }
+        return redirect()->to($url)->with('success', 'Producto agregado al carrito');
     }
     public function eliminarDelCarrito()
     {

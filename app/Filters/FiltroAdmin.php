@@ -17,6 +17,8 @@ class FiltroAdmin implements FilterInterface
             if (!$usuarioInfo['esAdmin']) {
                 return redirect()->to('/');
             }
+        } else {
+            return redirect()->to('/');
         }
     }
 

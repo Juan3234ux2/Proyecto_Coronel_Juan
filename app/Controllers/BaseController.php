@@ -59,6 +59,7 @@ abstract class BaseController extends Controller
     }
     public function cargarVista($view, $data)
     {
+        /*
         $productosModel = new ProductosModel();
         $infoProductos = $productosModel->obtenerProductosConDetalles();
         $data['productosCarrito'] = $infoProductos;
@@ -68,7 +69,7 @@ abstract class BaseController extends Controller
             $infoUsuario = $usuariosModel->find($usuarioId);
             $carrito = $usuariosModel->obtenerCarrito($usuarioId);
             $data += ['usuario' => $infoUsuario, 'carrito' => $carrito];
-        }
+        }*/
         echo view('templates/header', $data);
         echo view('front/' . $view, $data);
         echo view('templates/footer');

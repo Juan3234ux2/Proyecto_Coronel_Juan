@@ -14,20 +14,33 @@ class CategoriasController extends BaseController
     }
     public function index()
     {
-        $categorias = $this->categorias->obtenerCategoriasActivas();
-        $data = ['titulo' => 'Categorias', 'categorias' => $categorias];
-        $this->cargarVistaAdmin('categorias/categorias', $data);
+        $data = ['titulo' => 'Categorías', 'entidad' => 'categorias'];
+        $this->cargarVistaAdmin('cruds', $data);
     }
-    public function agregarCategoria()
+    public function listarCategorias()
     {
-        $data = ['titulo' => 'Agregar categoria'];
-        $this->cargarVistaAdmin('categorias/agregar_categoria', $data);
-    }
-    public function editarCategoria($id)
-    {
-        $categoria = $this->categorias->obtenerCategoriaPorId($id);
-        $data = ['titulo' => 'Editar categoria', 'categoria' => $categoria];
-        $this->cargarVistaAdmin('categorias/editar_categoria', $data);
+        $perPage = $this->request->getGet('perPage') ?? 10;
+        $page = $this->request->getGet('page') ?? 1;
+        $search = $this->request->getGet('search') ?? '';
+
+        if (!empty($search)) {
+            $this->categorias->like('nombre', $search);
+        }
+
+        $totalCategorias = $this->categorias->where('activo', 1)->countAllResults(false);
+        $categorias = $this->categorias
+            ->where('activo', 1)
+            ->findAll($perPage, ($page - 1) * $perPage);
+
+        return $this->response->setJSON([
+            'items' => $categorias,
+            'pagination' => [
+                'total' => $totalCategorias,
+                'perPage' => $perPage,
+                'page' => (int) $page,
+                'totalPages' => ceil($totalCategorias / $perPage)
+            ]
+        ]);
     }
     public function insertarCategoria()
     {
@@ -46,12 +59,13 @@ class CategoriasController extends BaseController
                 'nombre' => $this->request->getPost('nombre')
             ];
             $this->categorias->insert($data);
-            return redirect()->to('dashboard/categorias');
+            return $this->response->setJSON(['status' => 'success']);
         }
     }
     public function actualizarCategoria()
     {
-        $id = $this->request->getPost('id');
+        $dataRequest = $this->request->getRawInput();
+        $id = $dataRequest['id'];
         $validacion = $this->validate([
             'nombre' => [
                 'rules' => 'required',
@@ -65,21 +79,24 @@ class CategoriasController extends BaseController
             $this->cargarVistaAdmin('categorias/editar_categoria', ['validacion' => $this->validator, 'titulo' => 'Editar Categoria', 'categoria' => $categoria]);
         } else {
             $data = [
-                'nombre' => $this->request->getPost('nombre')
+                'nombre' => $dataRequest['nombre']
             ];
             $this->categorias->actualizarCategoria($id, $data);
-            return redirect()->to('dashboard/categorias');
+            return $this->response->setJSON(['status' => 'success']);
         }
     }
-    public function activarCategoria($id)
+    public function activarCategoria()
     {
+        $dataRequest = $this->request->getRawInput();
+        $id = $dataRequest['id'];
         $data['activo'] = 1;
         $this->categorias->actualizarCategoria($id, $data);
-        return redirect()->to('dashboard/categorias');
+        return $this->response->setJSON(['status' => 'success', 'redirect' => base_url('dashboard/categorias')]);
     }
     public function eliminarCategoria()
     {
-        $id = $this->request->getPost('id');
+        $dataRequest = $this->request->getRawInput();
+        $id = $dataRequest['id'];
         $data['activo'] = 0;
         $this->categorias->actualizarCategoria($id, $data);
         return $this->response->setJSON(['status' => 'success']);
@@ -87,7 +104,7 @@ class CategoriasController extends BaseController
     public function categoriasEliminadas()
     {
         $categorias = $this->categorias->obtenerCategoriasInactivas();
-        $data = ['titulo' => 'Categorias', 'categorias' => $categorias];
-        $this->cargarVistaAdmin('categorias/eliminados', $data);
+        $data = ['titulo' => 'Categorías Eliminadas', 'items' => $categorias, 'entidad' => 'categorias'];
+        $this->cargarVistaAdmin('lista_eliminados', $data);
     }
 }

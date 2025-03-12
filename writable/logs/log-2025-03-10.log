@@ -1,0 +1,1279 @@
+INFO - 2025-03-10 19:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-10 19:25:22 --> mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list' in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Home.php(12): App\Controllers\BaseController->cargarVista('index', Array)
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Home->index()
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2025-03-10 19:25:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 6 APPPATH\Controllers\Home.php(12): App\Controllers\BaseController->cargarVista('index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 19:25:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 8 APPPATH\Controllers\Home.php(12): App\Controllers\BaseController->cargarVista('index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 19:25:22 --> [Caused by] mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 9 APPPATH\Controllers\Home.php(12): App\Controllers\BaseController->cargarVista('index', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-10 19:25:31 --> mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list' in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', Array)
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Home->show404()
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#12 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2025-03-10 19:25:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 19:25:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 8 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+10 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 19:25:31 --> [Caused by] mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 9 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+11 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:25:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-10 19:25:54 --> mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list' in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\AutenticacionController.php(25): App\Controllers\BaseController->cargarVista('login', Array)
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\AutenticacionController->login()
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutenticacionController))
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2025-03-10 19:25:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 6 APPPATH\Controllers\AutenticacionController.php(25): App\Controllers\BaseController->cargarVista('login', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\AutenticacionController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutenticacionController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 19:25:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 8 APPPATH\Controllers\AutenticacionController.php(25): App\Controllers\BaseController->cargarVista('login', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\AutenticacionController->login()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutenticacionController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 19:25:54 --> [Caused by] mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\BaseController.php(63): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 9 APPPATH\Controllers\AutenticacionController.php(25): App\Controllers\BaseController->cargarVista('login', [...])
+10 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\AutenticacionController->login()
+11 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutenticacionController))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:26:42 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\AdminController.php on line 70.
+ 1 APPPATH\Controllers\AdminController.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Controllers\\AdminController.php', 70)
+ 2 APPPATH\Controllers\AdminController.php(17): App\Controllers\AdminController->obtenerPorcentajeVentas()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\AdminController->dashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:27:19 --> Error: Call to a member function getFiles() on array
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:27:34 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:27:40 --> Error: Call to a member function getFiles() on array
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:29:05 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:29:30 --> Error: Call to a member function isValid() on array
+in APPPATH\Controllers\Productos.php on line 102.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:34:36 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:34:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:41:02 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:41:37 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Productos.php on line 112.
+ 1 APPPATH\Controllers\Productos.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Controllers\\Productos.php', 112)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:42:46 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Productos.php on line 112.
+ 1 APPPATH\Controllers\Productos.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Controllers\\Productos.php', 112)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:45:05 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:45:33 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\Productos.php on line 112.
+ 1 APPPATH\Controllers\Productos.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Controllers\\Productos.php', 112)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:46:39 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:47:05 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\Productos.php on line 112.
+ 1 APPPATH\Controllers\Productos.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Controllers\\Productos.php', 112)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:48:10 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:48:11 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 APPPATH\Controllers\Productos.php(101): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:48:18 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 APPPATH\Controllers\Productos.php(101): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:48:44 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:48:49 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 APPPATH\Controllers\Productos.php(101): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:51:38 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:51:41 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 APPPATH\Controllers\Productos.php(101): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:52:03 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 APPPATH\Controllers\Productos.php(101): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:52:52 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:53:19 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Productos.php on line 101.
+ 1 APPPATH\Controllers\Productos.php(101): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:53:29 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:53:39 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:55:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:55:16 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:55:36 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:58:50 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 19:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 19:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 19:59:21 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:04:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:04:13 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:05:14 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:13:14 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-10 20:14:09 --> mysqli_sql_exception: Unknown column 'nombre' in 'field list' in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `im...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `im...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `im...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `im...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-10 20:14:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (:id_presentacion:, :nombre:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Productos.php(123): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 20:14:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (25, \'1741637649_65a39098cc59927799f2.webp\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (25, \'1741637649_65a39098cc59927799f2.webp\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (:id_presentacion:, :nombre:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Productos.php(123): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 20:14:09 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (25, \'1741637649_65a39098cc59927799f2.webp\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (25, \'1741637649_65a39098cc59927799f2.webp\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (25, \'1741637649_65a39098cc59927799f2.webp\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `imagenes_presentaciones` (`id_presentacion`, `nombre`) VALUES (:id_presentacion:, :nombre:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Productos.php(123): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->insertarProducto()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:14:28 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-10 20:47:40 --> mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list' in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(80): App\Models\ProductosModel->obtenerProductosConDetalles()
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->listadoProductos()
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-10 20:47:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(80): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->listadoProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 20:47:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(80): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->listadoProductos()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-10 20:47:40 --> [Caused by] mysqli_sql_exception: Unknown column 'unidades.nombre_corto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, `categorias`.`nombre` AS `nombre_categoria`, `marcas`.`nombre` AS `nombre_marca`, `unidades`.`nombre_corto` AS `nombre_unidad`
+FROM `productos`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `productos`.`activo` = 1', [], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(96): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(80): App\Models\ProductosModel->obtenerProductosConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->listadoProductos()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:49:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:50:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:50:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:51:01 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:51:17 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:51:20 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:51:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:51:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:51:31 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:52:20 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:52:27 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:57:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:58:28 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 20:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 20:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 20:59:22 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:01:11 --> ErrorException: Undefined array key "precio_compra"
+in APPPATH\Views\admin\productos\editar_producto.php on line 47.
+ 1 APPPATH\Views\admin\productos\editar_producto.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "precio_compra"', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php', 47)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\admin\\productos\\editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/productos/editar_producto', [], true)
+ 5 APPPATH\Controllers\BaseController.php(94): view('admin/productos/editar_producto', [...])
+ 6 APPPATH\Controllers\Productos.php(166): App\Controllers\BaseController->cargarVistaAdmin('productos/editar_producto', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->editarProducto('67')
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:10:40 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:10:42 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:10:43 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:10:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:10:54 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:10:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:11:11 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:11:13 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:11:15 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:11:18 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:15:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:15:39 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:15:48 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:16:36 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:17:45 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:18:33 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:18:35 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:18:38 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:18:40 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:19:10 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-10 21:19:23 --> ErrorException: Undefined variable $usuario
+in APPPATH\Views\templates\header.php on line 80.
+ 1 APPPATH\Views\templates\header.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH\Controllers\BaseController.php(73): view('templates/header', [...])
+ 6 APPPATH\Controllers\Home.php(42): App\Controllers\BaseController->cargarVista('404', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->show404()
+ 8 SYSTEMPATH\CodeIgniter.php(972): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(370): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-10 21:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:20:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-10 21:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

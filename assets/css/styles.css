@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
   --text-color: rgb(7, 7, 7);
+    --exito: #3ab65c;
+    --error: #bf333b;
+    --info: #1898c0;
+    --warning: #bc8c12;
 }
 * {
   font-family: "Inter", sans-serif;
@@ -190,16 +194,12 @@ section.card-dashboard{
 .filter-btn:hover  .border-text::after, .border-text:hover::after {
   width: 100%;
 }
-.options-container {
-  display: none;
-}
+
 .container-info-checkout{
   width: 55%;
 }
-.options-container.active {
-  display: block;
-}
-.options-wrapper{
+
+#options-container{
   position: absolute;
   display: flex;
   z-index: 100;
@@ -216,7 +216,7 @@ section.card-dashboard{
   padding-right: 50px;
   text-align: start;
 }
-.options-wrapper a{
+#options-container a{
   max-width: fit-content;
 }
 .filter-btn:hover svg{
@@ -375,6 +375,12 @@ input[type="range"]::-moz-range-thumb {
     right: -7px;
     ¨*/
 }
+.contenedor-producto {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 12px;
+}
 .form-check label {
   font-size: 14px;
   font-weight: 700;
@@ -447,7 +453,19 @@ input[type="range"]::-moz-range-thumb {
   font-size: 14px;
   border-radius: 6px;
 }
-.popover-user{
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+#popover-user{
   position:absolute;
   width: 200px;
   display: flex;
@@ -460,7 +478,7 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 6px;
 }
 
-.popover-user::before {
+#popover-user::before {
   content: "";
   position: absolute;
   top: -11px; 
@@ -473,7 +491,7 @@ input[type="range"]::-moz-range-thumb {
   z-index: 1;
 }
 
-.popover-user::after {
+#popover-user::after {
   content: "";
   position: absolute;
   top: -10px;
@@ -485,7 +503,7 @@ input[type="range"]::-moz-range-thumb {
   
   z-index: 2; 
 }
-.popover-user a{
+#popover-user a{
   font-size: 12px;
   color:black;
   padding: 8px;
@@ -498,7 +516,7 @@ input[type="range"]::-moz-range-thumb {
   justify-content: start;
   gap: 8px;
 }
-.popover-user a i{
+#popover-user a i{
   font-size: 15px;
 }
 .ql-editor.ql-blank::before{
@@ -510,19 +528,103 @@ input[type="range"]::-moz-range-thumb {
 .ql-editor:focus{
   outline: auto;
 }
+.btn-crud:disabled{
+  background-color: rgb(119, 119, 119);
+}
+.btn-indicador-paginacion {
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.btn-indicador-paginacion.active {
+  background-color: rgb(21, 31, 31);
+  color: white;
+  font-weight: 600;
+}
+
+.btn-indicador-paginacion i {
+  font-size: 12px;
+}
+.btn-indicador-paginacion:not(:disabled):not(.active):hover {
+  background-color: rgb(209, 209, 209);
+}
 .form-input-dashboard, .ql-editor{
   padding: 10px;
   background-color: white;
   border: 1px solid rgb(200, 200, 200);
   font-size: 13px;
   border-radius: 6px;
+  width: 100%;
 }
+.loader-btn {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+  @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
 .form-select-dashboard{
   padding: 12px;
   border: 1px solid rgb(200, 200, 200);
   font-size: 13px;
   border-radius: 6px;
+  width: 100% ;
+}
+.form-img-dashboard{
+  border: 1px dashed rgb(200, 200, 200);
+  font-size: 12px;
+  font-weight: 600;
+  height: 120px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  min-width: 120px;
+  flex-direction: column;
+  color:rgb(139, 139, 139)
+}
 
+.image-container{
+  position:relative;
+}
+.preview-image{
+  height: 120px;
+  width: 120px;
+  border: 1px solid rgb(210,210,210);
+  border-radius: 6px;
+  padding: 10px;
+}
+.delete-img-btn{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(255, 0, 0);
+  color:white;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0 6px;
+}
+.card-variants{
+  background-color: rgb(243, 243, 243);
+  padding: 20px;
+  border-radius: 10px;
 }
 /*Formulario contacto*/
 .form-input,
@@ -809,4 +911,129 @@ textarea:focus + .form-label,
   .offcanvas {
     width: 450px !important;
   }
+}
+
+
+/* Toast */
+.contenedor-toast {
+  z-index: 100;
+	position: fixed;
+	right: 40px;
+	top: 40px;
+	width: 100%;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 10px;
+}
+
+.toastp {
+	background: #ccc;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 10px;
+	overflow: hidden;
+	animation-name: apertura;
+	animation-duration: 200ms;
+	animation-timing-function: ease-out;
+	position: relative;
+}
+
+.toastp.exito {
+	background: var(--exito);
+}
+.toastp.error {
+	background: var(--error);
+}
+.toastp.info {
+	background: var(--info);
+}
+.toastp.warning {
+	background: var(--warning);
+}
+
+.toastp .contenido {
+	display: grid;
+	grid-template-columns: 30px auto;
+	align-items: center;
+	gap: 15px;
+  font-size: 12px;
+	padding: 15px;
+}
+
+.toastp .icono {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.toastp .titulo {
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.toastp .btn-cerrar {
+	background: rgba(0, 0, 0, 0.1);
+	border: none;
+	cursor: pointer;
+	padding: 0px 5px;
+	transition: 0.3s ease all;
+}
+
+.toastp .btn-cerrar:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.toastp .btn-cerrar .icono {
+	width: 20px;
+	height: 20px;
+	color: #fff;
+}
+
+@keyframes apertura {
+	from {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.toastp.cerrando {
+	animation-name: cierre;
+	animation-duration: 200ms;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes cierre {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(100% + 40px));
+	}
+}
+
+.toastp.autoCierre::after {
+	content: '';
+	width: 100%;
+	height: 4px;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	bottom: 0;
+	animation-name: autoCierre;
+	animation-duration: 5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes autoCierre {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0%;
+	}
 }

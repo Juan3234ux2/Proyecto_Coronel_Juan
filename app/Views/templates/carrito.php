@@ -12,33 +12,32 @@
                         if ($producto['id'] == $item['producto_id']) {
                             $nombre = devolverNombreProducto($producto) ?>
                             <!--Contenedor Producto-->
-                            <div class="d-flex justify-content-between mb-3 position-relative" id="<?php echo $producto['id']; ?>">
+                            <div class="contenedor-producto">
                                 <!--Contenedor de imagen, nombre y cantidad-->
                                 <div class="d-flex">
                                     <img style="width: 95px;" src="<?php echo base_url('assets/uploads/') . $producto['imagen']; ?>"
-                                        alt="">
-                                    <!--Contenedor titulo y cantidad-->
+                                        alt="Imagen del Producto">
                                     <div class="d-flex flex-column justify-content-between">
                                         <h2 class="mt-2 fw-bold text-black" style="font-size: .8rem;"><?php echo $nombre ?></h2>
                                         <div class="cantidad d-flex mb-2">
-                                            <button class="btn-cantidad mx-0 btn-cantidad-menos"
+                                            <button class="btn-cantidad mx-0" onclick="cartFunctions.actualizarCantidad(this, -1)"
                                                 data-id="<?php echo $producto['id']; ?>"><i class="bi bi-dash"></i></button>
                                             <input disabled style="background-color: white;" class="mx-0 input-cantidad"
-                                                data-precio="<?php echo $producto['precio_venta']; ?>"
-                                                onchange="cambiarPrecio(<?php echo $producto['precio_venta'] ?>, this)" type="number"
+                                                id="input-producto-<?php echo $producto['id']; ?>" type="number"
                                                 value="<?php echo $item['cantidad'] ?>">
-                                            <button class="btn-cantidad mx-0 btn-cantidad-mas"
+                                            <button class="btn-cantidad mx-0" onclick="cartFunctions.actualizarCantidad(this, 1)"
                                                 data-id="<?php echo $producto['id']; ?>"><i class="bi bi-plus"></i></button>
                                         </div>
                                     </div>
-                                    <button data-id="<?php echo $producto['id']; ?>"
-                                        class="position-absolute bg-white eliminar-producto"
-                                        style="right: 0; top:5px; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+                                    <button onclick="cartFunctions.eliminarProducto('<?php echo $producto['id']; ?>')"
+                                        class="position-absolute bg-white" style="right: 0; top:5px; cursor:pointer;"><i
+                                            class="bi bi-x-lg"></i></button>
                                 </div>
                                 <!--Precio del producto-->
-                                <span class="align-self-end fw-bold text-black" style="font-size:1rem"><span
-                                        data-precio="<?php echo $producto['precio_venta']; ?>"
-                                        class="precio-producto"><?php echo $producto['precio_venta']; ?></span></span>
+                                <div class="align-self-end fw-bold text-black" style="font-size:1rem"><span
+                                        data-precio="<?php echo $producto['precio_venta']; ?>" class="precio-producto">$
+                                        <?php echo number_format($producto['precio_venta'] * $item['cantidad'], 2, ',', '.') ?></span>
+                                </div>
                             </div>
                         <?php } ?>
 

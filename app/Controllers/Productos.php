@@ -3,22 +3,31 @@
 namespace App\Controllers;
 
 use App\Models\CategoriasModel;
+use App\Models\ImagenesPresentacionesModel;
 use App\Models\MarcasModel;
+use App\Models\PresentacionesModel;
 use App\Models\ProductosModel;
+use App\Models\SaboresModel;
 use App\Models\UnidadesModel;
 
 class Productos extends BaseController
 {
     protected $productos;
     protected $categorias;
+    protected $sabores;
     protected $unidades;
     protected $marcas;
+    protected $presentaciones;
+    protected $imagenesPresentaciones;
     public function __construct()
     {
         $this->productos = new ProductosModel();
         $this->categorias = new CategoriasModel();
         $this->unidades = new UnidadesModel();
         $this->marcas = new MarcasModel();
+        $this->sabores = new SaboresModel();
+        $this->presentaciones = new PresentacionesModel();
+        $this->imagenesPresentaciones = new ImagenesPresentacionesModel();
         helper(['url', 'form', 'upload']);
     }
     public function index($categoria)
@@ -82,34 +91,57 @@ class Productos extends BaseController
     }
     public function insertarProducto()
     {
-        $validacion = $this->validarFormulario(1);
-        if (!$validacion) {
-            $data = $this->devolverDatos('Agregar Producto', null);
-            $this->cargarVistaAdmin('productos/agregar_productos', $data);
-        } else {
-            $imagen = $this->request->getFile('imagen');
-            if ($imagen->isValid() && !$imagen->hasMoved()) {
-                if ($imagen->isValid() && !$imagen->hasMoved()) {
+        $data = [
+            'nombre' => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'caracteristicas' => $this->request->getPost('caracteristicas'),
+            'id_marca' => $this->request->getPost('marca'),
+            'id_categoria' => $this->request->getPost('categoria'),
+        ];
+        $insertedID = $this->productos->insert($data);
+        $presentaciones = $this->request->getPost('presentaciones');
+        foreach ($presentaciones as $index => $presentacion) {
+            $data = [
+                'id_producto' => $insertedID,
+                'id_sabor' => $presentacion['sabor'],
+                'id_unidad' => $presentacion['unidad'],
+                'stock' => $presentacion['stock'],
+                'precio_compra' => $presentacion['precio_compra'],
+                'precio_venta' => $presentacion['precio_venta'],
+                'contenido' => $presentacion['tamanio'],
+            ];
+            $idPresentacion = $this->presentaciones->insert($data);
+            if ($this->request->getFiles()) {
+                $imagenes = $this->request->getFiles()['imagenes'][$index];
+                foreach ($imagenes as $imagen) {
                     $nombreImagen = $imagen->getRandomName();
                     $imagen->move(ROOTPATH . 'assets/uploads', $nombreImagen);
                     $data = [
-                        'nombre' => $this->request->getPost('nombre'),
-                        'id_marca' => $this->request->getPost('marca'),
-                        'id_categoria' => $this->request->getPost('categoria'),
-                        'precio_compra' => $this->request->getPost('precioCompra'),
-                        'precio_venta' => $this->request->getPost('precioVenta'),
-                        'stock' => $this->request->getPost('stock'),
-                        'contenido' => $this->request->getPost('contenido'),
-                        'id_unidad' => $this->request->getPost('unidad'),
-                        'imagen' => $nombreImagen
+                        'id_presentacion' => $idPresentacion,
+                        'nombre_imagenes' => $nombreImagen
                     ];
-                    $this->productos->insert($data);
-                    return redirect()->to('dashboard/productos')->with('success', 'Producto agregado correctamente!');
-                } else {
-                    return redirect()->back()->with('fail', 'Imagen no valida');
+                    $this->imagenesPresentaciones->insert($data);
                 }
             }
         }
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Producto Agregado Correctamente', 'redirect' => base_url('dashboard/productos')]);
+    }
+    public function listarProductos()
+    {
+        $perPage = $this->request->getGet('perPage') ?? 10;
+        $page = $this->request->getGet('page') ?? 1;
+        $search = $this->request->getGet('search') ?? '';
+        $items = $this->productos->filtrarProductos($search, $perPage, $page);
+        $totalProductos = $this->productos->where('activo', 1)->countAllResults(false);
+        return $this->response->setJSON([
+            'items' => $items,
+            'pagination' => [
+                'total' => $totalProductos,
+                'perPage' => $perPage,
+                'page' => (int) $page,
+                'totalPages' => ceil($totalProductos / $perPage),
+            ]
+        ]);
     }
     public function activarProducto($id)
     {
@@ -119,9 +151,14 @@ class Productos extends BaseController
     }
     public function eliminarProducto()
     {
-        $idProducto = $this->request->getPost('id');
+        $dataRequest = $this->request->getRawInput();
+        $idProducto = $dataRequest['id'];
         $data['activo'] = 0;
         if ($this->productos->actualizarProducto($idProducto, $data)) {
+            $presentaciones = $this->presentaciones->where('id_producto', $idProducto)->findAll();
+            foreach ($presentaciones as $presentacion) {
+                $this->presentaciones->update($presentacion['id'], $data);
+            }
             return $this->response->setJSON(['status' => 'success']);
         } else {
             return $this->response->setJSON(['status' => 'error']);
@@ -234,6 +271,7 @@ class Productos extends BaseController
         $categorias = $this->categorias->obtenerCategoriasActivas();
         $unidades = $this->unidades->obtenerUnidadesActivas();
         $marcas = $this->marcas->obtenerMarcasActivas();
+        $sabores = $this->sabores->obtenerSaboresActivos();
         if (isset($id)) {
             $producto = $this->productos->obtenerProductoPorID($id);
             return [
@@ -242,7 +280,8 @@ class Productos extends BaseController
                 'categorias' => $categorias,
                 'unidades' => $unidades,
                 'marcas' => $marcas,
-                'producto' => $producto
+                'producto' => $producto,
+                'sabores' => $sabores
             ];
         } else {
             return [
@@ -251,6 +290,7 @@ class Productos extends BaseController
                 'categorias' => $categorias,
                 'unidades' => $unidades,
                 'marcas' => $marcas,
+                'sabores' => $sabores
             ];
         }
     }

@@ -1,20 +1,22 @@
-<section class="container-lg px-0 px-sm-2 mx-auto px-lg" style="margin-top: 180px;">
+<script type="module">
+  import { toggleDropdown } from '<?php echo base_url('assets/js/utils.js'); ?>';
+  window.toggleDropdown = toggleDropdown;
+</script>
+<section class="container-lg" style="margin-top: 180px;">
   <span class="text-center d-block d-lg-none text-medium fw-bold"><?php echo count($productos); ?> productos</span>
   <div class="d-lg-flex justify-content-end align-items-center d-none position-relative" style="font-size: 14px;">
     <span class="fw-bold">Ordenar Por:</span>
-    <button class="filter-btn" style="background: none; ">
+    <button class="filter-btn popover-trigger" onclick="toggleDropdown('options-container')" style="background: none; ">
       <span class="border-text">Menor Precio</span>
       <i class="iconify" data-icon="material-symbols:keyboard-arrow-down" data-inline="false"></i>
     </button>
-    <div class="options-container">
-      <div class="options-wrapper">
-        <a href="#" class="border-text">Caracteristicas</a>
-        <a href="#" class="border-text">Mas Vendidos</a>
-        <a href="#" class="border-text">Alfabeticamente A-Z</a>
-        <a href="#" class="border-text">Alfabeticamente Z-A</a>
-        <a href="#" class="border-text">Precio, Menor a Mayor</a>
-        <a href="#" class="border-text">Precio, Mayor a Menor</a>
-      </div>
+    <div id="options-container" class="d-none popover">
+      <a href=" #" class="border-text">Caracteristicas</a>
+      <a href="#" class="border-text">Mas Vendidos</a>
+      <a href="#" class="border-text">Alfabeticamente A-Z</a>
+      <a href="#" class="border-text">Alfabeticamente Z-A</a>
+      <a href="#" class="border-text">Precio, Menor a Mayor</a>
+      <a href="#" class="border-text">Precio, Mayor a Menor</a>
     </div>
   </div>
   <div class="d-flex gap-4">
@@ -111,7 +113,7 @@
     <div class="products-cards px-0 row">
       <?php
       foreach ($productos as $producto) {
-        $nombre = $producto['nombre'] . ' ' . $producto['contenido'] . $producto['nombre_unidad'] . ' ' . $producto['nombre_marca'];
+        $nombre = devolverNombreProducto($producto);
         $url = strtolower(str_replace(" ", "-", $nombre . ' ' . $producto['id']));
         ?>
 

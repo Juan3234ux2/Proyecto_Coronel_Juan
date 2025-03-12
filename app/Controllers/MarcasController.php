@@ -14,21 +14,35 @@ class MarcasController extends BaseController
     }
     public function index()
     {
-        $marcas = $this->marcas->obtenerMarcasActivas();
-        $data = ['titulo' => 'Marcas', 'marcas' => $marcas];
-        $this->cargarVistaAdmin('marcas/marcas', $data);
+        $data = ['titulo' => 'Marcas'];
+        $this->cargarVistaAdmin('cruds', $data);
     }
-    public function agregarMarca()
+    public function listarMarcas()
     {
-        $data = ['titulo' => 'Agregar marca'];
-        $this->cargarVistaAdmin('marcas/agregar_marca', $data);
+        $perPage = $this->request->getGet('perPage') ?? 10;
+        $page = $this->request->getGet('page') ?? 1;
+        $search = $this->request->getGet('search') ?? '';
+
+        if (!empty($search)) {
+            $this->marcas->like('nombre', $search);
+        }
+
+        $totalMarcas = $this->marcas->where('activo', 1)->countAllResults(false);
+        $marcas = $this->marcas
+            ->where('activo', 1)
+            ->findAll($perPage, ($page - 1) * $perPage);
+
+        return $this->response->setJSON([
+            'items' => $marcas,
+            'pagination' => [
+                'total' => $totalMarcas,
+                'perPage' => $perPage,
+                'page' => (int) $page,
+                'totalPages' => ceil($totalMarcas / $perPage)
+            ]
+        ]);
     }
-    public function editarMarca($id)
-    {
-        $marca = $this->marcas->obtenerMarcasPorId($id);
-        $data = ['titulo' => 'Editar marca', 'marca' => $marca];
-        $this->cargarVistaAdmin('marcas/editar_marca', $data);
-    }
+
     public function insertarMarca()
     {
         $validacion = $this->validate([
@@ -46,12 +60,14 @@ class MarcasController extends BaseController
                 'nombre' => $this->request->getPost('nombre')
             ];
             $this->marcas->insert($data);
-            return redirect()->to('dashboard/marcas');
+            return $this->response->setJSON(['status' => 'success']);
         }
     }
     public function actualizarMarca()
     {
-        $id = $this->request->getPost('id');
+        $dataRequest = $this->request->getRawInput();
+        $id = $dataRequest['id'];
+
         $validacion = $this->validate([
             'nombre' => [
                 'rules' => 'required',
@@ -65,23 +81,26 @@ class MarcasController extends BaseController
             $this->cargarVistaAdmin('marcas/editar_marca', ['validacion' => $this->validator, 'titulo' => 'Editar Marca', 'marca' => $marca]);
         } else {
             $data = [
-                'nombre' => $this->request->getPost('nombre'),
+                'nombre' => $dataRequest['nombre'],
             ];
             $this->marcas->actualizarMarca($id, $data);
-            return redirect()->to('dashboard/marcas');
+            return $this->response->setJSON(['status' => 'success']);
         }
     }
-    public function activarMarca($id)
+    public function activarMarca()
     {
+        $dataRequest = $this->request->getRawInput();
+        $id = $dataRequest['id'];
         $data = [
             'activo' => 1,
         ];
         $this->marcas->actualizarMarca($id, $data);
-        return redirect()->to('dashboard/marcas');
+        return $this->response->setJSON(['status' => 'success', 'redirect' => base_url('dashboard/marcas')]);
     }
     public function eliminarMarca()
     {
-        $id = $this->request->getPost('id');
+        $dataRequest = $this->request->getRawInput();
+        $id = $dataRequest['id'];
         $data['activo'] = 0;
         $this->marcas->actualizarMarca($id, $data);
         return $this->response->setJSON(['status' => 'success']);
@@ -89,7 +108,7 @@ class MarcasController extends BaseController
     public function marcasEliminadas()
     {
         $marcas = $this->marcas->obtenerMarcasInactivas();
-        $data = ['titulo' => 'Marcas', 'marcas' => $marcas];
-        $this->cargarVistaAdmin('marcas/eliminados', $data);
+        $data = ['titulo' => 'Marcas Eliminadas', 'items' => $marcas, 'entidad' => 'marcas'];
+        $this->cargarVistaAdmin('lista_eliminados', $data);
     }
 }
