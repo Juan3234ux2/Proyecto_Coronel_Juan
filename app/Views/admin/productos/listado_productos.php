@@ -1,12 +1,5 @@
 <section class="card-dashboard">
     <h1 class="fs-2 fw-bold mt-3 px-4">Productos</h1>
-    <?php if (!empty(session()->getFlashdata('success'))) { ?>
-        <span class="mb-2 text-center mensaje-flash"
-            style="background-color: rgba(0, 255, 0, 0.2); display:block; padding:12px; color:green; font-weight:500; border-radius:2px">
-            <?= session()->getFlashdata('success'); ?>
-        </span>
-        <?php
-    } ?>
     <div class="d-flex justify-content-between align-items-center mt-4 mb-2 mx-4">
         <div class="col-xl-4 col-5">
             <input type="text" class="form-input-dashboard" placeholder="Buscar por nombre, categoria, marca..."
@@ -68,4 +61,4 @@
         </div>
     </div>
 </div>
-<script src="<?php echo base_url('assets/js/crud/productos.js'); ?>"></script>
+<script type="module" src="<?php echo base_url('assets/js/crud/productos.js'); ?>"></script>

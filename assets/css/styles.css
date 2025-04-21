@@ -216,8 +216,10 @@ section.card-dashboard{
   padding-right: 50px;
   text-align: start;
 }
-#options-container a{
+#options-container button{
   max-width: fit-content;
+  padding: 0;
+  background-color: transparent;
 }
 .filter-btn:hover svg{
   background-color: rgb(0, 0, 0);
@@ -624,7 +626,18 @@ input[type="range"]::-moz-range-thumb {
 .card-variants{
   background-color: rgb(243, 243, 243);
   padding: 20px;
+  padding-bottom: 30px;
   border-radius: 10px;
+}
+.caracteristicas-producto{
+  font-weight: 600;
+}
+.caracteristicas-producto p{
+  font-size: 14px;
+  margin: 0;
+}
+.caracteristicas-producto h2{
+  font-size: 20px;
 }
 /*Formulario contacto*/
 .form-input,
@@ -913,10 +926,19 @@ textarea:focus + .form-label,
   }
 }
 
-
+.errorMessageValidation{
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+.errorMessageValidation:empty{
+  display: block;
+  padding: 4px;
+}
 /* Toast */
 .contenedor-toast {
-  z-index: 100;
+  z-index: 2000;
 	position: fixed;
 	right: 40px;
 	top: 40px;

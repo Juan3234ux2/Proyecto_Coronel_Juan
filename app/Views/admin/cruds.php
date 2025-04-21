@@ -77,12 +77,11 @@ $singular = substr($titulo, -2) == "es" ? substr($titulo, 0, -2) : substr($titul
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div style="flex-grow:1;">
+                <div style="flex-grow:1;" id="inputNombreCrud">
                     <label style="font-size: 13px;" class="fw-semibold mb-2" for="nombre">Nombre</label>
                     <input class="form-input-dashboard" autocomplete="off" name="nombre" id="nombre" require type="text"
                         placeholder="Ingrese el nombre del <?= strtolower($singular) ?>">
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'nombre') : ' ' ?>
+                    <span class="errorMessageValidation" id="errorName">
                     </span>
                 </div>
 

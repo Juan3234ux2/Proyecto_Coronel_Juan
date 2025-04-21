@@ -11,6 +11,7 @@ class AdminController extends BaseController
 {
     public function dashboard()
     {
+        /*
         $pedidosModel = new PedidosModel();
         $categorias = new CategoriasModel();
         $estadisticaVentas = $pedidosModel->obtenerEstadisticasVentas();
@@ -44,7 +45,8 @@ class AdminController extends BaseController
             'categorias' => json_encode($categorias),
             'porcentajes' => json_encode($porcentajes),
         ];
-        $this->cargarVistaAdmin("dashboard", $data);
+        */
+        $this->cargarVistaAdmin("dashboard", ['titulo' => 'Dashboard']);
     }
     public function obtenerPorcentajeVentas()
     {

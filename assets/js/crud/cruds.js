@@ -10,6 +10,7 @@ const crearCrud = (entidad) => {
     const searchInput = d.getElementById('buscador');
     const perPageInput = d.getElementById('porPagina');
     const inputNombre = d.getElementById('nombre');
+    const errorName = d.getElementById('errorName');
     let idEntidad;
 
     const API = {
@@ -20,22 +21,12 @@ const crearCrud = (entidad) => {
         delete: '/eliminar',
         restore: '/activar'
     };
-
     const singular = entidad.slice(-2) == "es" ? entidad.slice(0, 1).toUpperCase() + entidad.slice(1, -2) : entidad.slice(0, 1).toUpperCase() + entidad.slice(1, -1);
-    const mostrarFeedback = (mensaje) => {
-        alert(mensaje); 
-    };
-
-    const validarFormulario = () => {
-        const nombre = inputNombre.value.trim();
-        if (!nombre) {
-            mostrarFeedback('El nombre de la categoría es requerido', true);
-            return false;
-        }
-        return true;
-    };
-
     const onSubmit = async () => {
+        if(inputNombre.value.trim() === '') {
+            errorName.innerHTML = 'El nombre es obligatorio';
+            return
+        }
         try {
             loaderBtn.classList.remove('d-none');
             btnSave.setAttribute('disabled', true); 
@@ -55,7 +46,7 @@ const crearCrud = (entidad) => {
                 agregarToast({ tipo: 'exito', titulo: 'Éxito', descripcion: `Operación realizada con éxito`, autoCierre: true });
                 searchInput.value = '';
             } else {
-                agregarToast({ tipo: 'error', titulo: 'Error', descripcion: 'Intente nuevamente', autoCierre: true });
+                d.getElementById('errorName').textContent = data.errors.nombre;
             }
         } catch (error) {
             agregarToast({ tipo: 'error', titulo: 'Error', descripcion: 'Intente nuevamente', autoCierre: true });
@@ -176,13 +167,20 @@ const crearCrud = (entidad) => {
             // Resetear formulario al cerrar el modal
             modalForm.addEventListener('hidden.bs.modal', () => {
                 inputNombre.value = '';
+                errorName.textContent = '';
             });
             
             d.getElementById('btn-agregar').addEventListener('click', () => {
                 modalFormTitle.textContent = `Agregar ${singular}`;
                 idEntidad = null;
             });
-            
+            inputNombre.addEventListener('input', () => {
+                if(inputNombre.value.trim() !== ''){
+                    errorName.textContent = '';
+                }else{       
+                    errorName.textContent = 'El nombre es obligatorio';
+                }
+            })
             perPageInput.addEventListener('change', () => {
                 searchInput.value = '';
                 fetchItems();

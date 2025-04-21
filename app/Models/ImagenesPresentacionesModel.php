@@ -14,7 +14,7 @@ class ImagenesPresentacionesModel extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['id_presentacion', 'nombre'];
+    protected $allowedFields = ['id_presentacion', 'nombre', 'nombre_imagen'];
 
     protected bool $allowEmptyInserts = false;
 
@@ -24,4 +24,8 @@ class ImagenesPresentacionesModel extends Model
     protected $validationMessages = [];
     protected $skipValidation = false;
 
+    public function obtenerImagenesPorPresentacion($idPresentacion)
+    {
+        return $this->select("imagenes_presentaciones.nombre_imagen")->where("imagenes_presentaciones.id_presentacion", $idPresentacion)->findAll();
+    }
 }

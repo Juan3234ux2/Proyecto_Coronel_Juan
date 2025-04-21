@@ -13,8 +13,9 @@ $principal = [
     'comercializacion' => 'Home::comercializacion',
     'cerrar-sesion' => 'AutenticacionController::cerrarSesion',
     'terminos-y-condiciones' => 'Home::terminosYCondiciones',
-    'colecciones/(:segment)' => 'Productos::index/$1',
-    'productos/(:segment)' => 'Productos::verProducto/$1',
+    'colecciones/(:segment)' => 'Productos::index/',
+    'productos/cambiar-sabor' => 'Productos::cambiarSabor',
+    'productos/(:segment)' => 'Productos::verProducto',
 ];
 $routes->map($principal);
 $routes->post('enviar-consulta', 'ConsultasController::recibirConsulta');
@@ -47,32 +48,33 @@ $routes->get('search', 'Home::buscar/$1');
 $routes->group('', ['filter' => 'usuarioAdmin'], function ($routes) {
     /*CRUD Sabores*/
     $routes->get('dashboard/sabores', 'SaboresController::index');
-    $routes->get('dashboard/sabores/listar', 'SaboresController::listarSabores');
-    $routes->post('dashboard/sabores/insertar', 'SaboresController::insertarSabor');
-    $routes->put('dashboard/sabores/actualizar', 'SaboresController::actualizarSabor');
-    $routes->put('dashboard/sabores/eliminar/', 'SaboresController::eliminarSabor');
-    $routes->put('dashboard/sabores/activar/', 'SaboresController::activarSabor');
-    $routes->get('dashboard/sabores/eliminados', 'SaboresController::saboresEliminados');
+    $routes->get('dashboard/sabores/listar', 'SaboresController::list');
+    $routes->post('dashboard/sabores/insertar', 'SaboresController::create');
+    $routes->put('dashboard/sabores/actualizar', 'SaboresController::update');
+    $routes->put('dashboard/sabores/eliminar/', 'SaboresController::delete');
+    $routes->put('dashboard/sabores/activar/', 'SaboresController::restore');
+    $routes->get('dashboard/sabores/eliminados', 'SaboresController::listDeleted');
     /*CRUD Categorias*/
     $routes->get('dashboard/categorias', 'categoriasController::index');
-    $routes->get('dashboard/categorias/listar', 'categoriasController::listarCategorias');
-    $routes->post('dashboard/categorias/insertar', 'categoriasController::insertarCategoria');
-    $routes->put('dashboard/categorias/actualizar', 'categoriasController::actualizarCategoria');
-    $routes->put('dashboard/categorias/eliminar', 'categoriasController::eliminarCategoria');
-    $routes->put('dashboard/categorias/activar/', 'categoriasController::activarCategoria');
-    $routes->get('dashboard/categorias/eliminados', 'categoriasController::categoriasEliminadas');
+    $routes->get('dashboard/categorias/listar', 'categoriasController::list');
+    $routes->post('dashboard/categorias/insertar', 'categoriasController::create');
+    $routes->put('dashboard/categorias/actualizar', 'categoriasController::update');
+    $routes->put('dashboard/categorias/eliminar', 'categoriasController::delete');
+    $routes->put('dashboard/categorias/activar/', 'categoriasController::restore');
+    $routes->get('dashboard/categorias/eliminados', 'categoriasController::listDeleted');
     /*CRUD Marcas*/
     $routes->get('dashboard/marcas', 'MarcasController::index');
-    $routes->get('dashboard/marcas/listar', 'MarcasController::listarMarcas');
-    $routes->post('dashboard/marcas/insertar', 'MarcasController::insertarMarca');
-    $routes->put('dashboard/marcas/actualizar', 'MarcasController::actualizarMarca');
-    $routes->put('dashboard/marcas/eliminar', 'MarcasController::eliminarMarca');
-    $routes->put('dashboard/marcas/activar/', 'MarcasController::activarMarca');
-    $routes->get('dashboard/marcas/eliminados', 'MarcasController::marcasEliminadas');
+    $routes->get('dashboard/marcas/listar', 'MarcasController::list');
+    $routes->post('dashboard/marcas/insertar', 'MarcasController::create');
+    $routes->put('dashboard/marcas/actualizar', 'MarcasController::update');
+    $routes->put('dashboard/marcas/eliminar', 'MarcasController::delete');
+    $routes->put('dashboard/marcas/activar/', 'MarcasController::restore');
+    $routes->get('dashboard/marcas/eliminados', 'MarcasController::listDeleted');
     /*CRUD Productos*/
     $routes->get('dashboard/productos', 'Productos::listadoProductos');
     $routes->get('dashboard/productos/listar', 'Productos::listarProductos');
     $routes->get('dashboard/productos/agregar', 'Productos::agregarProducto');
+    $routes->get('dashboard/productos/presentaciones/(:num)', 'Productos::listadoPresentaciones/$1');
     $routes->post('dashboard/productos/insertar', 'Productos::insertarProducto');
     $routes->put('dashboard/productos/eliminar/', 'Productos::eliminarProducto/');
     $routes->get('dashboard/productos/editar/(:num)', 'Productos::editarProducto/$1');

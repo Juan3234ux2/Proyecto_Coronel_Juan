@@ -1,104 +1,169 @@
-<section class="container-lg mt-2">
-    <form method="post" action="<?php echo base_url('dashboard/productos/actualizar'); ?>" enctype="multipart/form-data" autocomplete="off">
-        <h1 class="fs-2 text-center ">Editar Producto</h1>
-        <div class="form__container d-flex justify-content-center align-items-center my-4">
-            <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
-            <div class="form__group col-12 col-sm-10 col-md-8 col-lg-6">
-                <?php if (!empty(session()->getFlashdata('fail'))) { ?>
-                    <span class="mb-2" style="background-color: rgba(255, 0, 0, 0.2); display:block; padding:12px; color:red; font-weight:500; border-radius:2px">
-                        <?= session()->getFlashdata('fail'); ?>
-                    </span>
-                <?php
-                } ?>
-                <div class="position-relative" style="flex-grow:1;">
-                    <input class="mx-0 w-100 form-input" autocomplete="off" required name="nombre" id="nombre" value="<?php echo $producto['nombre']; ?>" required type="text" placeholder=" ">
-                    <label class="form-label" for="nombre">Nombre</label>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'nombre') : ' ' ?>
-                    </span>
-                </div>
-                <div class="position-relative" style="flex-grow:1;">
-                    <select class="w-100 select tiene-contenido" name="marca" id="marca">
-                        <?php foreach ($marcas as $marca) { ?>
-                            <option value="<?php echo $marca['id']; ?>" <?php if ($marca['id'] == $producto['id_marca']) {
-                                                                            echo 'selected';
-                                                                        } ?>> <?php echo $marca['nombre']; ?> </option>
-                        <?php } ?>
-                    </select>
-                    <label class="form-label" for="marca">Marca</label>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'marca') : ' ' ?>
-                    </span>
-                </div>
-                <div class="position-relative" style="flex-grow:1;">
-                    <select class="w-100 select tiene-contenido" name="categoria" id="categoria">
-                        <?php foreach ($categorias as $categoria) { ?>
-                            <option value="<?php echo $categoria['id']; ?>" <?php if ($categoria['id'] == $producto['id_categoria']) {
-                                                                                echo 'selected';
-                                                                            } ?>> <?php echo $categoria['nombre']; ?> </option>
-                        <?php } ?>
-                    </select>
-                    <label class=" form-label" for="categoria">Categoria</label>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'categoria') : ' ' ?>
-                    </span>
-                </div>
-                <div class="position-relative" style="flex-grow:1;">
-                    <input class="mx-0 w-100 form-input" autocomplete="off" required name="precioCompra" value="<?php echo $producto['precio_compra']; ?>" id="precioCompra" required type="number" placeholder=" ">
-                    <label class="form-label" for="precioCompra">Precio Compra</label>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'precioCompra') : ' ' ?>
-                    </span>
-                </div>
-                <div class="position-relative" style="flex-grow:1;">
-                    <input class="mx-0 w-100 form-input" autocomplete="off" required name="precioVenta" id="precioVenta" value="<?php echo $producto['precio_venta']; ?>" required type="number" placeholder=" ">
-                    <label class="form-label" for="precioVenta">Precio Venta</label>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'precioVenta') : ' ' ?>
-                    </span>
-                </div>
-                <div class="position-relative" style="flex-grow:1;">
-                    <input class="mx-0 w-100 form-input" autocomplete="off" value="<?php echo $producto['stock']; ?>" required name="stock" id="stock" required type="number" placeholder=" ">
-                    <label class="form-label" for="stock">Stock</label>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'stock') : ' ' ?>
-                    </span>
-                </div>
-                <div class="w-75 d-flex gap-2">
-                    <div class="position-relative">
-                        <input class="mx-0 form-input" autocomplete="off" required name="contenido" value="<?php echo $producto['contenido']; ?>" id="contenido" required type="number" placeholder=" ">
-                        <label class="form-label" for="contenido">Contenido</label>
-                        <span style="font-size: .9rem; display:inline-block">
-                            <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'contenido') : ' ' ?>
-                        </span>
-                    </div>
-                    <div class="position-relative" style="flex-grow:1;">
-                        <select class="w-100 select tiene-contenido" name="unidad" id="unidad">
-                            <?php foreach ($unidades as $unidad) { ?>
-                                <option value="<?php echo $unidad['id']; ?>" <?php if ($unidad['id'] == $producto['id_unidad']) {
-                                                                                    echo 'selected';
-                                                                                } ?>> <?php echo $unidad['nombre_corto']; ?> </option>
-                            <?php } ?>
-                        </select>
-                        <label class="form-label" for="unidad">Unidad</label>
-                        <span style="font-size: .9rem; display:inline-block">
-                            <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'unidad') : ' ' ?>
-                        </span>
-                    </div>
-                </div>
-                <div class="select-image d-flex flex-column mb-3">
-                    <div id="vista-previa">
-                        <img class="w-50" src="<?php echo base_url('assets/uploads/' . $producto['imagen']); ?>" alt="Imagen producto">
-                    </div>
-                    <input name="imagen" id="imagen" onchange="actualizarImagenProducto(this)" type="file">
-                    <label for="imagen" style="top:15px;font-size:16px; font-weight:500"><i class="bi bi-cloud-arrow-up"></i>Seleccionar Imagen</label>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'imagen') : ' ' ?>
-                    </span>
-                </div>
-                <button class="btn-enviar-datos mb-2 text-uppercase w-100">Editar Producto</button>
-                <a class="text-black w-100 d-inline-block text-center" href="<?php echo base_url('dashboard/productos'); ?>" style="font-size: 15px; font-weight:500">Regresar</a>
+<section style="width: 95%; margin: 0 auto;">
+    <form id="form-producto" class="mb-2" enctype="multipart/form-data" autocomplete="off">
+        <div class="d-flex justify-content-between align-items-center my-4">
+            <h1 class="fs-3 fw-bold mb-0">Editar Producto</h1>
+            <a class="btn-crud px-3 mb-0 d-flex align-items-center gap-2"
+                href="<?php echo base_url('dashboard/productos'); ?>"
+                style="background-color: transparent; color:rgb(44, 44, 44); border:1px solid rgb(200,200,200); font-size: 12px;"><i
+                    class="bi bi-arrow-left fs-6"></i> Descartar</a>
+        </div>
+        <div class="card-dashboard py-3 px-4">
+            <input type="text" name="id" value="<?php echo $producto['id']; ?>" hidden id="idProducto">
+            <h2 class="fw-bold fs-6 d-flex gap-2 mb-3"><i class="bi bi-info-circle" style="color:
+                        orange"></i>Información del
+                producto</h2>
+            <div>
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="nombre">Nombre</label>
+                <input class="form-input-dashboard" autocomplete="off" value="<?php echo $producto['nombre']; ?>"
+                    name="nombre" id="nombre" type="text" placeholder="Ingresa el nombre del producto">
+                <span class="errorMessageValidation"></span>
             </div>
+            <div class="d-flex gap-4">
+                <div class="flex-grow-1">
+                    <label style="font-size: 13px;" class="fw-semibold mb-2" for="marca">Marca</label>
+                    <select class="form-select-dashboard" name="marca" id="marca">
+                        <?php if (empty($marcas)) {
+                            echo '<option disabled selected>No hay marcas disponibles.</option>';
+                        } else {
+                            foreach ($marcas as $marca) { ?>
+                                <option <?php if ($marca['id'] == $producto['id_marca'])
+                                    echo 'selected'; ?>
+                                    value="<?php echo $marca['id']; ?>"><?php echo $marca['nombre']; ?></option>
+                            <?php }
+                        } ?>
+                    </select>
+                    <span class="errorMessageValidation"></span>
+                </div>
+                <div class="flex-grow-1">
+                    <label style="font-size: 13px;" class="fw-semibold mb-2" for="categoria">Categoria</label>
+                    <select class="form-select-dashboard" name="categoria" id="categoria">
+                        <?php if (empty($categorias)) {
+                            echo '<option disabled selected>No hay categorias disponibles.</option>';
+                        } else {
+                            foreach ($categorias as $categoria) { ?>
+                                <option <?php if ($categoria['id'] == $producto['id_categoria'])
+                                    echo 'selected'; ?>
+                                    value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nombre']; ?></option>
+                            <?php }
+                        } ?>
+                    </select>
+                    <span class="errorMessageValidation"></span>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="caracteristicas">Características</label>
+                <div id="caracteristicas"></div>
+                <span class="errorMessageValidation"></span>
+            </div>
+            <div>
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="descripcion">Descripción</label>
+                <div id="descripcion"></div>
+                <span class="errorMessageValidation"></span>
+            </div>
+        </div>
+        <div class="card-dashboard py-3 mt-4 px-4">
+            <h2 class="fw-bold fs-6 d-flex gap-2 mb-3"><i class="bi bi-life-preserver" style="color:
+                        orange"></i>Presentaciones</h2>
+            <div id="contenedor-presentaciones" class="d-flex flex-column gap-4"></div>
+            <div class="d-flex justify-content-end mt-3">
+                <button id="agregar-presentacion" style="background-color: darkgreen;" type="button"
+                    class="btn-crud my-0"><i class="bi bi-plus-circle"></i>
+                    Agregar
+                    Presentacion</button>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end mt-4 gap-3">
+            <a href="<?php echo base_url('dashboard/productos'); ?>"
+                style="background-color: transparent; color:rgb(44, 44, 44); border: 1px solid rgb(210,210,210)"
+                class="btn-crud">
+                Cancelar
+            </a>
+            <button type="submit" id="btn-guardar" class="btn-crud">
+                <span class="loader-btn d-none"></span>
+                Guardar Producto
+            </button>
         </div>
     </form>
 </section>
+
+<template id="template-presentaciones">
+    <div class="card-variants presentacion-row">
+        <div class="d-flex justify-content-between mb-2">
+            <h3 class="fs-6 fw-bold">Presentacion <span class="variant-number"></span></h3>
+            <button onclick="eliminarPresentacion(this)" style="background-color: transparent;" type="button"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Eliminar Presentacion.">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <input type="hidden" name="presentaciones[0][index]" class="presentacion-index" value="">
+        <div class="d-flex gap-4">
+            <div class="w-50">
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="sabor">Sabor</label>
+                <select class="form-select-dashboard" name="presentaciones[0][sabor]">
+                    <?php if (empty($sabores)) {
+                        echo '<option disabled selected>No hay sabores disponibles.</option>';
+                    } else {
+                        foreach ($sabores as $sabor) { ?>
+                            <option value="<?php echo $sabor['id']; ?>"><?php echo $sabor['nombre']; ?></option>
+                        <?php }
+                    } ?>
+                </select>
+                <span class="errorMessageValidation"></span>
+            </div>
+            <div class="w-50">
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="stock">Stock</label>
+                <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][stock]" type="number"
+                    placeholder="Ingresa el stock de producto">
+                <span class="errorMessageValidation"></span>
+            </div>
+        </div>
+        <div class="d-flex gap-4">
+            <div class="w-50">
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="precio_compra">Precio
+                    Compra</label>
+                <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][precio_compra]"
+                    type="number" placeholder="Ingresa el precio de compra">
+                <span class="errorMessageValidation"></span>
+            </div>
+            <div class="w-50">
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="precio_venta">Precio Venta</label>
+                <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][precio_venta]"
+                    type="number" placeholder="Ingresa el precio de venta">
+                <span class="errorMessageValidation"></span>
+            </div>
+        </div>
+        <div class="d-flex gap-4">
+            <div class="w-75">
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="tamanio">Tamaño</label>
+                <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][tamanio]" type="number"
+                    placeholder="Ingresa el tamaño de la presentación">
+                <span class="errorMessageValidation"></span>
+            </div>
+            <div class="w-25">
+                <label style="font-size: 13px;" class="fw-semibold mb-2" for="unidad">Unidad</label>
+                <select class="form-select-dashboard" id="unidad" name="presentaciones[0][unidad]">
+                    <?php foreach ($unidades as $unidad) { ?>
+                        <option value="<?php echo $unidad['id']; ?>"><?php echo $unidad['nombre_corto']; ?></option>
+                    <?php } ?>
+                </select>
+                <span class="errorMessageValidation"></span>
+            </div>
+        </div>
+        <span style="font-size: 13px; cursor: default;" class="fw-semibold mb-2">Imágenes</span>
+        <div class="d-flex gap-3 align-items-center mt-2 position-relative">
+            <input class="d-none imagen-input" accept="image/*" max="5" name="imagenes[0][]"
+                oninput="actualizarImagenProducto(this)" multiple type="file">
+            <label class="form-img-dashboard imagen-label"><i class="bi bi-plus-circle"></i> Agregar
+                Imagen</label>
+            <div class="vista-previa-imagenes d-flex gap-3"></div>
+            <span class="errorMessageValidation position-absolute" style="bottom:-22px"></span>
+        </div>
+    </div>
+    </div>
+</template>
+<script>
+    const BASE_URL = '<?php echo base_url(); ?>';
+    const producto = JSON.parse('<?php echo json_encode($producto); ?>');
+</script>
+
+<script type="module" src="<?php echo base_url('assets/js/crud/productos.js'); ?>"></script>

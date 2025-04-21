@@ -1,0 +1,46 @@
+CRITICAL - 2025-03-16 19:13:46 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Helpers\Product_helper.php on line 4.
+ 1 APPPATH\Helpers\Product_helper.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Helpers\\Product_helper.php', 4)
+ 2 APPPATH\Controllers\Productos.php(61): devolverNombreProducto(null)
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->verProducto('proteina-juan-2kg-ena-20')
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-16 19:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-16 19:14:05 --> ErrorException: Undefined variable $productosCarrito
+in APPPATH\Views\front\index.php on line 65.
+ 1 APPPATH\Views\front\index.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productosCarrito', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\front\\index.php', 65)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\front\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('front/index', [], true)
+ 5 APPPATH\Controllers\BaseController.php(74): view('front/index', [...])
+ 6 APPPATH\Controllers\Home.php(12): App\Controllers\BaseController->cargarVista('index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-16 19:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:15:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 19:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 22:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-16 22:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-16 22:57:26 --> ErrorException: Undefined variable $productosCarrito
+in APPPATH\Views\front\index.php on line 65.
+ 1 APPPATH\Views\front\index.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productosCarrito', 'C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\front\\index.php', 65)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Proyecto_Coronel_Juan\\app\\Views\\front\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('front/index', [], true)
+ 5 APPPATH\Controllers\BaseController.php(74): view('front/index', [...])
+ 6 APPPATH\Controllers\Home.php(12): App\Controllers\BaseController->cargarVista('index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-16 22:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

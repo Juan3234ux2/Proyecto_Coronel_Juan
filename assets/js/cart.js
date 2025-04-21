@@ -1,4 +1,4 @@
-import { formatCurrency, parseCurrency } from './utils.js';
+import {parseCurrency } from './utils.js';
 
 const elements = {
     precioTotal: document.getElementById("precio-total"),

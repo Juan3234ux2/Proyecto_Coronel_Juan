@@ -15,25 +15,21 @@
                 <label style="font-size: 13px;" class="fw-semibold mb-2" for="nombre">Nombre</label>
                 <input class="form-input-dashboard" autocomplete="off" name="nombre" id="nombre" type="text"
                     placeholder="Ingresa el nombre del producto">
-                <span style="font-size: .9rem; display:inline-block">
-                    <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'nombre') : ' ' ?>
-                </span>
+                <span class="errorMessageValidation"></span>
             </div>
             <div class="d-flex gap-4">
                 <div class="flex-grow-1">
                     <label style="font-size: 13px;" class="fw-semibold mb-2" for="marca">Marca</label>
                     <select class="form-select-dashboard" name="marca" id="marca">
                         <?php if (empty($marcas)) {
-                            echo '<option disabled seleted>No hay marcas disponibles.</option>';
+                            echo '<option disabled selected>No hay marcas disponibles.</option>';
                         } else {
                             foreach ($marcas as $marca) { ?>
                                 <option value="<?php echo $marca['id']; ?>"><?php echo $marca['nombre']; ?></option>
                             <?php }
                         } ?>
                     </select>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'marca') : ' ' ?>
-                    </span>
+                    <span class="errorMessageValidation"></span>
                 </div>
                 <div class="flex-grow-1">
                     <label style="font-size: 13px;" class="fw-semibold mb-2" for="categoria">Categoria</label>
@@ -46,18 +42,18 @@
                             <?php }
                         } ?>
                     </select>
-                    <span style="font-size: .9rem; display:inline-block">
-                        <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'categoria') : ' ' ?>
-                    </span>
+                    <span class="errorMessageValidation"></span>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label style="font-size: 13px;" class="fw-semibold mb-2" for="caracteristicas">Características</label>
-                <div id="caracteristicas-producto"></div>
+                <div id="caracteristicas"></div>
+                <span class="errorMessageValidation"></span>
             </div>
             <div>
                 <label style="font-size: 13px;" class="fw-semibold mb-2" for="descripcion">Descripción</label>
-                <div id="descripcion-producto"></div>
+                <div id="descripcion"></div>
+                <span class="errorMessageValidation"></span>
             </div>
         </div>
         <div class="card-dashboard py-3 mt-4 px-4">
@@ -86,7 +82,7 @@
 </section>
 
 <template id="template-presentaciones">
-    <div class="card-variants">
+    <div class="card-variants presentacion-row">
         <div class="d-flex justify-content-between mb-2">
             <h3 class="fs-6 fw-bold">Presentacion <span class="variant-number"></span></h3>
             <button onclick="eliminarPresentacion(this)" style="background-color: transparent;" type="button"
@@ -107,17 +103,13 @@
                         <?php }
                     } ?>
                 </select>
-                <span style="font-size: .9rem; display:inline-block">
-                    <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'sabor') : ' ' ?>
-                </span>
+                <span class="errorMessageValidation"></span>
             </div>
             <div class="w-50">
                 <label style="font-size: 13px;" class="fw-semibold mb-2" for="stock">Stock</label>
                 <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][stock]" type="number"
                     placeholder="Ingresa el stock de producto">
-                <span style="font-size: .9rem; display:inline-block">
-                    <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'stock') : ' ' ?>
-                </span>
+                <span class="errorMessageValidation"></span>
             </div>
         </div>
         <div class="d-flex gap-4">
@@ -126,17 +118,13 @@
                     Compra</label>
                 <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][precio_compra]"
                     type="number" placeholder="Ingresa el precio de compra">
-                <span style="font-size: .9rem; display:inline-block">
-                    <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'precio_compra') : ' ' ?>
-                </span>
+                <span class="errorMessageValidation"></span>
             </div>
             <div class="w-50">
                 <label style="font-size: 13px;" class="fw-semibold mb-2" for="precio_venta">Precio Venta</label>
                 <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][precio_venta]"
                     type="number" placeholder="Ingresa el precio de venta">
-                <span style="font-size: .9rem; display:inline-block">
-                    <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'precio_venta') : ' ' ?>
-                </span>
+                <span class="errorMessageValidation"></span>
             </div>
         </div>
         <div class="d-flex gap-4">
@@ -144,9 +132,7 @@
                 <label style="font-size: 13px;" class="fw-semibold mb-2" for="tamanio">Tamaño</label>
                 <input class="form-input-dashboard" autocomplete="off" name="presentaciones[0][tamanio]" type="number"
                     placeholder="Ingresa el tamaño de la presentación">
-                <span style="font-size: .9rem; display:inline-block">
-                    <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'tamanio') : ' ' ?>
-                </span>
+                <span class="errorMessageValidation"></span>
             </div>
             <div class="w-25">
                 <label style="font-size: 13px;" class="fw-semibold mb-2" for="unidad">Unidad</label>
@@ -155,112 +141,19 @@
                         <option value="<?php echo $unidad['id']; ?>"><?php echo $unidad['nombre_corto']; ?></option>
                     <?php } ?>
                 </select>
-                <span style="font-size: .9rem; display:inline-block">
-                    <?= isset($validacion) ? mostrarErroresFormulario($validacion, 'unidad') : ' ' ?>
-                </span>
+                <span class="errorMessageValidation"></span>
             </div>
         </div>
         <span style="font-size: 13px; cursor: default;" class="fw-semibold mb-2">Imágenes</span>
-        <div class="d-flex gap-3 align-items-center mt-2">
+        <div class="d-flex gap-3 align-items-center mt-2 position-relative">
             <input class="d-none imagen-input" accept="image/*" max="5" name="imagenes[0][]"
                 oninput="actualizarImagenProducto(this)" multiple type="file">
             <label class="form-img-dashboard imagen-label"><i class="bi bi-plus-circle"></i> Agregar
                 Imagen</label>
             <div class="vista-previa-imagenes d-flex gap-3"></div>
+            <span class="errorMessageValidation position-absolute" style="bottom:-22px"></span>
         </div>
     </div>
     </div>
 </template>
-
-<script>
-    let variantIndex = 0;
-    const container = document.getElementById('contenedor-presentaciones');
-    document.getElementById('agregar-presentacion').addEventListener('click', function () {
-        variantIndex++;
-        const template = document.getElementById('template-presentaciones');
-        const clone = document.importNode(template.content, true);
-        clone.querySelectorAll('select, input').forEach(element => {
-            const name = element.getAttribute('name');
-            if (name && name.includes('presentaciones[0]')) {
-                element.setAttribute('name', name.replace('presentaciones[0]', `presentaciones[${variantIndex}]`));
-            }
-        });
-
-        clone.querySelector('.variant-number').textContent = variantIndex;
-
-        clone.querySelector('.presentacion-index').value = variantIndex;
-
-        const fileInput = clone.querySelector('.imagen-input');
-        const fileLabel = clone.querySelector('.imagen-label');
-        const uniqueId = `imagen-${variantIndex}`;
-        fileInput.id = uniqueId;
-        fileLabel.setAttribute('for', uniqueId);
-        fileInput.name = `imagenes[${variantIndex}][]`;
-        container.appendChild(clone);
-
-        const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        tooltips.forEach(tooltip => new bootstrap.Tooltip(tooltip));
-    });
-
-    function eliminarPresentacion(button) {
-        if (container.childElementCount > 1) {
-            button.closest('.card-variants').remove();
-            variantIndex--;
-            container.querySelectorAll('.variant-number').forEach((element, index) => {
-                element.textContent = index + 1;
-            })
-            container.querySelectorAll('.presentacion-index').forEach((element, index) => {
-                element.value = index;
-            })
-        }
-    }
-    function actualizarImagenProducto(input) {
-        const previewContainer = input.closest('.d-flex').querySelector('.vista-previa-imagenes');
-        previewContainer.innerHTML = '';
-
-        if (input.files && input.files.length > 0) {
-            const filesArray = Array.from(input.files);
-            const newFileList = new DataTransfer();
-
-            filesArray.forEach((file, index) => {
-                const reader = new FileReader();
-                const imageContainer = document.createElement('div');
-                imageContainer.classList.add('image-container');
-
-                reader.onload = function (e) {
-                    const image = new Image();
-                    image.classList.add('preview-image');
-                    image.src = e.target.result;
-
-                    const btnDelete = document.createElement("button");
-                    btnDelete.innerHTML = "×";
-                    btnDelete.classList.add("delete-img-btn");
-
-                    btnDelete.addEventListener("click", function () {
-                        imageContainer.remove();
-                        filesArray.splice(index, 1);
-                        newFileList.items.clear();
-                        filesArray.forEach(f => newFileList.items.add(f));
-                        input.files = newFileList.files;
-                    });
-
-                    imageContainer.appendChild(btnDelete);
-                    imageContainer.appendChild(image);
-                    previewContainer.appendChild(imageContainer);
-                };
-
-                reader.readAsDataURL(file);
-                newFileList.items.add(file);
-            });
-
-            input.files = newFileList.files;
-        }
-    }
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('agregar-presentacion').click();
-    });
-
-</script>
-<script src="<?php echo base_url('assets/js/crud/productos.js'); ?>"></script>
+<script type="module" src="<?php echo base_url('assets/js/crud/productos.js'); ?>"></script>

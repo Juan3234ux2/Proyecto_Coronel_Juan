@@ -1,0 +1,1367 @@
+INFO - 2025-03-25 00:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-25 00:02:26 --> mysqli_sql_exception: Table 'imgenes_presentaciones.nombre_imagen' doesn't exist in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:02:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'imgenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'imgenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:26 --> [Caused by] mysqli_sql_exception: Table 'imgenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imgenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:02:32 --> mysqli_sql_exception: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:02:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:32 --> [Caused by] mysqli_sql_exception: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:02:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.i...' at line 3 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:02:44 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.i...' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.i...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:44 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.i...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:02:59 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentacio...' at line 3 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:02:59 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentacio...' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentacio...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:02:59 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentacio...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNERJOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:03:02 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaci...' at line 3 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:03:02 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaci...' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:03:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaci...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:03:02 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaci...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               INNER JOIN imagenes_presentaciones ON presentaciones.id = imagenes_presentaciones.id_presentacion
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:03:23 --> mysqli_sql_exception: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:03:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:03:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:03:23 --> [Caused by] mysqli_sql_exception: Table 'imagenes_presentaciones.nombre_imagen' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               AND imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:03:34 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = pre...' at line 3 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:03:34 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = pre...' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:03:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = pre...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:03:34 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = pre...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones as id_presentacion, imagenes_presentaciones.nombre_imagen
+               WHERE presentaciones.id_producto = productos.id 
+               JOIN imagenes_presentaciones ON imagenes_presentaciones.id_presentacion = presentaciones.id
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1), `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(124): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:04:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(127): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:04:55 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(127): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:04:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(127): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:04:55 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as id_presentacion, `imagenes_presentaciones`.`nombre_imagen` as `nombre_imagen`, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(127): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-03-25 00:05:08 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1 in C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Models\ProductosModel.php(126): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Proyecto_Coronel_Juan\app\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(NULL)
+#8 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(943): App\Controllers\Productos->index('')
+#9 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\Proyecto_Coronel_Juan\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Proyecto_Coronel_Juan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-03-25 00:05:08 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ProductosModel.php(126): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:05:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ProductosModel.php(126): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-03-25 00:05:08 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE presentaciones.id_producto = productos.id 
+               ORDER BY pre...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= \'0\'
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.*, MIN(presentaciones.precio_venta) as precio_desde, (SELECT id FROM presentaciones, WHERE presentaciones.id_producto = productos.id 
+               ORDER BY presentaciones.precio_venta ASC 
+               LIMIT 1) as id_presentacion, (SELECT nombre_imagen FROM imagenes_presentaciones, WHERE imagenes_presentaciones.id_presentacion = id_presentacion 
+               LIMIT 1) as nombre_imagen, `categorias`.`nombre` AS `nombre_categoria`, GROUP_CONCAT(presentaciones.id_sabor) as sabores, `marcas`.`nombre` AS `nombre_marca`
+FROM `productos`
+LEFT JOIN `presentaciones` ON `presentaciones`.`id_producto` = `productos`.`id`
+LEFT JOIN `imagenes_presentaciones` ON `imagenes_presentaciones`.`id_presentacion` = `presentaciones`.`id`
+LEFT JOIN `categorias` ON `productos`.`id_categoria` = `categorias`.`id`
+LEFT JOIN `marcas` ON `productos`.`id_marca` = `marcas`.`id`
+WHERE `presentaciones`.`precio_venta` >= :presentaciones.precio_venta:
+GROUP BY `productos`.`id`
+ORDER BY `productos`.`nombre` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ProductosModel.php(126): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Productos.php(42): App\Models\ProductosModel->obtenerProductosClientes(null)
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Productos->index('')
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-25 00:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:06:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-25 00:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

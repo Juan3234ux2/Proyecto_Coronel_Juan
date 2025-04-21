@@ -62,20 +62,24 @@
       <div class="splide__track">
         <ul class="splide__list">
           <?php
-          foreach ($productosCarrito as $index => $producto) {
+
+          foreach ($productosPopulares as $index => $producto) {
             $nombre = devolverNombreProducto($producto);
-            $url = strtolower(str_replace(" ", "-", $nombre . ' ' . $producto['id']));
+            $url = strtolower(str_replace(" ", "-", $nombre . '?variant=' . $producto['id_presentacion']));
             ?>
 
             <li class=" splide__slide bg-white" data-aos="fade-in-up" style="border-radius: 10px;">
               <a class="h-100 position-relative" href="<?php echo base_url('productos/' . $url) ?>"
                 style="color:inherit; text-decoration:none;">
-                <img src=" <?php echo base_url('assets/uploads/' . $producto['imagen']); ?> " class="card-img-top mt-3"
-                  alt="...">
+                <img src=" <?php echo base_url('assets/uploads/' . $producto['nombre_imagen']); ?> "
+                  class="card-img-top mt-3" alt="...">
                 <div class="card-body py-4 mb-3 px-3">
                   <p class="text-start fw-bold pb-2" style="font-size: 14px"><?php echo $nombre ?></p>
-                  <span class="fw-semibold fs-6 position-absolute"
-                    style="bottom:15px; color:rgb(53, 53, 53)">$<?php echo number_format($producto['precio_venta'], 2, ',', '.') ?></span>
+                  <span class="fw-semibold fs-6 position-absolute" style="bottom:15px; color:rgb(53, 53, 53)">Desde
+                    $
+                    <?php
+                    echo number_format($producto['precio_desde'], 2, ',', '.') ?>
+                  </span>
                 </div>
               </a>
             </li>

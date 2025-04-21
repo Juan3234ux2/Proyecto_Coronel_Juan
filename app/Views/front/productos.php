@@ -2,21 +2,78 @@
   import { toggleDropdown } from '<?php echo base_url('assets/js/utils.js'); ?>';
   window.toggleDropdown = toggleDropdown;
 </script>
+<script>
+  let filters = {
+    orden: null,
+    categorias: [],
+    sabores: [],
+    precio_min: null,
+    precio_max: null
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.btn-order').forEach(item => {
+      item.addEventListener('click', function () {
+        filters.orden = item.dataset.order;
+        document.getElementById('currentOrder').textContent = item.textContent;
+        document.getElementsByTagName('body')[0].click();
+        fetchProducts();
+      })
+    });
+
+  })
+  const modificarPrecio = (tipo) => debounce({
+    if(tipo == 'min') {
+      filters.precio_min = document.querySelector('.range-min').value;
+    } else {
+    filters.precio_max = document.querySelector('.range-max').value;
+  }
+  fetchProducts();
+  }, 400)
+  const fetchProducts = async () => {
+    const response = await fetch(`<?php echo base_url('colecciones/todos-los-productos'); ?>?orden=${filters.orden}&categorias=${filters.categorias}&sabores=${filters.sabores}&precio_min=${filters.precio_min}&precio_max=${filters.precio_max}`, {
+      method: "GET",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest"
+      }
+    })
+
+    const data = await response.json();
+    document.querySelector('.products-cards').innerHTML = '';
+    data.productos.forEach(producto => {
+      let url = producto['nombre'].replace(" ", "-").toLowerCase() + '?variant=' + producto['id_presentacion'];
+      document.querySelector('.products-cards').innerHTML += `
+          <div class="col-xl-3 col-sm-4 col-6">
+            <a class="h-100 position-relative" href="<?php echo base_url('productos/'); ?>${url}"
+              style="color:inherit; text-decoration:none;">
+              <img src=" <?php echo base_url('assets/uploads/'); ?>${producto['nombre_imagen']}" class="card-img-top mt-3"
+                alt="${producto['nombre']} ${producto['nombre_marca']}">
+              <div class="card-body py-4 mb-3 px-3">
+                <p class="text-start fw-bold pb-2" style="font-size: 14px">${producto['nombre']} ${producto['nombre_marca']}</p>
+                <span class="fw-semibold position-absolute"
+                  style="bottom:15px; color:rgb(53, 53, 53); font-size: 14px;">Desde
+                  ${formatCurrency(producto['precio_desde'])}
+                </span>
+              </div>
+            </a>
+          </div>
+        `
+    })
+  }
+</script>
 <section class="container-lg" style="margin-top: 180px;">
   <span class="text-center d-block d-lg-none text-medium fw-bold"><?php echo count($productos); ?> productos</span>
   <div class="d-lg-flex justify-content-end align-items-center d-none position-relative" style="font-size: 14px;">
     <span class="fw-bold">Ordenar Por:</span>
     <button class="filter-btn popover-trigger" onclick="toggleDropdown('options-container')" style="background: none; ">
-      <span class="border-text">Menor Precio</span>
+      <span class="border-text" id="currentOrder">Alfabeticamente A-Z</span>
       <i class="iconify" data-icon="material-symbols:keyboard-arrow-down" data-inline="false"></i>
     </button>
     <div id="options-container" class="d-none popover">
-      <a href=" #" class="border-text">Caracteristicas</a>
-      <a href="#" class="border-text">Mas Vendidos</a>
-      <a href="#" class="border-text">Alfabeticamente A-Z</a>
-      <a href="#" class="border-text">Alfabeticamente Z-A</a>
-      <a href="#" class="border-text">Precio, Menor a Mayor</a>
-      <a href="#" class="border-text">Precio, Mayor a Menor</a>
+      <button data-order="" class="border-text btn-order">Mas Vendidos</button>
+      <button data-order="name-ascending" class="border-text btn-order">Alfabeticamente A-Z</button>
+      <button data-order="name-descending" class="border-text btn-order">Alfabeticamente Z-A</button>
+      <button data-order="price-ascending" class="border-text btn-order">Precio, Menor a Mayor</button>
+      <button data-order="price-descending" class="border-text btn-order">Precio, Mayor a Menor</button>
     </div>
   </div>
   <div class="d-flex gap-4">
@@ -41,8 +98,9 @@
                 <div class="progress"></div>
               </div>
               <div class="range-input">
-                <input type="range" class="range-min" min="0" max="100000" value="0">
-                <input type="range" class="range-max" min="0" max="100000" value="100000">
+                <input type="range" oninput="modificarPrecio('min')" class="range-min" min="0" max="100000" value="0">
+                <input type="range" oninput="modificarPrecio('max')" class="range-max" min="0" max="100000"
+                  value="100000">
               </div>
             </div>
             <div class="d-flex gap-4 mb-3 mt-2 align-items-center price-input" style="font-size: 13px;">
@@ -114,18 +172,22 @@
       <?php
       foreach ($productos as $producto) {
         $nombre = devolverNombreProducto($producto);
-        $url = strtolower(str_replace(" ", "-", $nombre . ' ' . $producto['id']));
+        $url = strtolower(str_replace(" ", "-", $nombre . '?variant=' . $producto['id_presentacion']));
         ?>
 
-        <div class="col-xl-3 col-lg-4 col-6">
+        <div class="col-xl-4 col-sm-4 col-6">
           <a class="h-100 position-relative" href="<?php echo base_url('productos/' . $url) ?>"
             style="color:inherit; text-decoration:none;">
-            <img src=" <?php echo base_url('assets/uploads/' . $producto['imagen']); ?> " class="card-img-top mt-3"
-              alt="...">
+            <img src=" <?php echo base_url('assets/uploads/' . $producto['nombre_imagen']); ?> " class="card-img-top mt-3"
+              alt="<?php echo $nombre ?>">
             <div class="card-body py-4 mb-3 px-3">
-              <p class="fw-bold text-start pb-2" style="font-size: 14px"><?php echo $nombre ?></p>
-              <span class="fw-semibold fs-6 position-absolute"
-                style="bottom:15px; color:rgb(53, 53, 53)">$<?php echo number_format($producto['precio_venta'], 2, ',', '.') ?></span>
+              <p class="text-start fw-bold pb-2" style="font-size: 14px"><?php echo $nombre ?></p>
+              <span class="fw-semibold position-absolute"
+                style="bottom:15px; color:rgb(53, 53, 53); font-size: 14px;">Desde
+                $
+                <?php
+                echo number_format($producto['precio_desde'], 2, ',', '.') ?>
+              </span>
             </div>
           </a>
         </div>

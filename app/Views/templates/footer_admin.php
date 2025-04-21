@@ -10,28 +10,14 @@
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
-    const toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ 'header': 1 }, { 'header': 2 }],
-        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
-        [{ 'script': 'sub' }, { 'script': 'super' }],
-        [{ 'indent': '-1' }, { 'indent': '+1' }],
 
-        [{ 'size': ['small', false, 'large', 'huge'] }],
-
-        [{ 'color': [] }, { 'background': [] }],
-        [{ 'font': [] }],
-        [{ 'align': [] }],
-
-        ['clean']
-    ];
 </script>
 <script type="module">
     import autoAnimate from 'https://cdn.jsdelivr.net/npm/@formkit/auto-animate'
     const contenedorPrensentaciones = document.getElementById('contenedor-presentaciones')
     if (contenedorPrensentaciones) {
         autoAnimate(contenedorPrensentaciones)
-    } 
+    }
 </script>
 </body>
 

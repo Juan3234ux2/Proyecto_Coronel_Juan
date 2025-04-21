@@ -28,6 +28,16 @@ class SaboresModel extends Model
     protected $validationRules = [];
     protected $validationMessages = [];
     protected $skipValidation = false;
+    public function obtenerSaboresPorProducto($idProducto)
+    {
+        return $this->select('sabores.id, sabores.nombre')
+            ->join('presentaciones', 'presentaciones.id_sabor = sabores.id', 'inner')
+            ->join('productos', 'presentaciones.id_producto = productos.id', 'inner')
+            ->where('sabores.activo', 1)
+            ->where('productos.id', $idProducto)
+            ->groupBy('sabores.id')
+            ->findAll();
+    }
     public function obtenerSaboresActivos()
     {
         return $this->where('activo', 1)->findAll();

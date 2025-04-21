@@ -30,41 +30,47 @@ class Productos extends BaseController
         $this->imagenesPresentaciones = new ImagenesPresentacionesModel();
         helper(['url', 'form', 'upload']);
     }
-    public function index($categoria)
+    public function index()
     {
-        if ($categoria != "todos-los-productos") {
-            $categoriaObtenida = $this->categorias->where('nombre', $categoria)->where('activo', 1)->first();
-            if (!isset($categoriaObtenida)) {
-                $data['titulo'] = 'Página no encontrada';
-                $this->cargarVista('404', $data);
-            } else {
-                $idCategoria = $categoriaObtenida['id'];
-                $data = [
-                    'titulo' => $categoria,
-                    'productos' => $this->productos->obtenerProductosPorCategoria($idCategoria)
-                ];
-                $this->cargarVista('productos', $data);
-            }
-        } else {
-            $data = [
-                'titulo' => $categoria,
-                'productos' => $this->productos->obtenerProductosConDetalles()
-            ];
+        $orden = $this->request->getGet('orden') ?? null;
+        $precioDesde = $this->request->getGet('precio_min') ?? null;
+        $precioHasta = $this->request->getGet('precio_max') ?? null;
+        $sabores = $this->request->getGet('sabores') ?? null;
+        $categorias = $this->request->getGet('categorias') ?? null;
+        $data = [
+            'titulo' => 'Productos',
+            'productos' => $this->productos->obtenerProductosClientes($orden)
+        ];
+        if (!$this->request->isAJAX()) {
             $this->cargarVista('productos', $data);
+            return;
         }
+        return $this->response->setJSON($data);
     }
-    public function verProducto($producto)
+    public function verProducto()
     {
-        $parametro = explode("-", $producto);
-        $id = end($parametro);
-        $productoObtenido = $this->productos->obtenerProductoPorID($id);
-        $nombreProducto = devolverNombreProducto($productoObtenido);
+        $id = $this->request->getGet("variant");
+        $presentacion = $this->presentaciones->obtenerPresentacion($id);
+        $presentacion["imagenes"] = explode(",", $presentacion["imagenes"]);
+        $parrafos = explode('</p>', $presentacion['caracteristicas']);
+        $presentacion['caracteristicas'] = array_filter($parrafos);
+        $nombreProducto = $presentacion['nombre_producto'] . ' ' . $presentacion['nombre_marca'];
         $data = [
             'titulo' => $nombreProducto,
-            'producto' => $productoObtenido,
-            'nombreProducto' => $nombreProducto
+            'producto' => $presentacion,
+            'nombreProducto' => $nombreProducto,
+            'sabores' => $this->sabores->obtenerSaboresPorProducto($presentacion['id_producto']),
+            'tamanios' => $this->presentaciones->obtenerPresentacionesPorSabor($presentacion['id_sabor'], $presentacion['id_producto']),
+            'productosRelacionados' => $this->productos->productosRelacionados($presentacion['id_categoria']) ?? [],
         ];
         $this->cargarVista('detalles_productos', $data);
+    }
+    public function cambiarSabor()
+    {
+        $id = $this->request->getGet('sabor');
+        $idProducto = $this->request->getGet('producto');
+        $presentacion = $this->presentaciones->obtenerPresentacionesPorSabor($id, $idProducto)[0];
+        return $this->response->setJSON(['id' => $presentacion['id']]);
     }
     public function productosEliminados()
     {
@@ -77,12 +83,20 @@ class Productos extends BaseController
     }
     public function listadoProductos()
     {
-        $productos = $this->productos->obtenerProductosConDetalles();
         $data = [
             'titulo' => 'Productos',
-            'productos' => $productos,
         ];
         $this->cargarVistaAdmin('productos/listado_productos', $data);
+    }
+    public function listadoPresentaciones($idProducto)
+    {
+        $presentaciones = $this->presentaciones->obtenerPresentaciones($idProducto);
+        $data = [
+            'titulo' => 'Productos',
+            'presentaciones' => $presentaciones,
+            'producto' => $this->productos->obtenerProductoPorID($idProducto)
+        ];
+        $this->cargarVistaAdmin('productos/listado_presentaciones', $data);
     }
     public function agregarProducto()
     {
@@ -112,13 +126,13 @@ class Productos extends BaseController
             ];
             $idPresentacion = $this->presentaciones->insert($data);
             if ($this->request->getFiles()) {
-                $imagenes = $this->request->getFiles()['imagenes'][$index];
+                $imagenes = $this->request->getFiles()['presentaciones'][$index]['imagenes'];
                 foreach ($imagenes as $imagen) {
                     $nombreImagen = $imagen->getRandomName();
                     $imagen->move(ROOTPATH . 'assets/uploads', $nombreImagen);
                     $data = [
                         'id_presentacion' => $idPresentacion,
-                        'nombre_imagenes' => $nombreImagen
+                        'nombre_imagen' => $nombreImagen
                     ];
                     $this->imagenesPresentaciones->insert($data);
                 }
@@ -171,32 +185,40 @@ class Productos extends BaseController
     }
     public function actualizarProducto()
     {
-        $validacion = $this->validarFormulario(0);
-        $id = $this->request->getPost('id');
-        if (!$validacion) {
-            $data = $this->devolverDatos('Editar Producto', $id);
-            $this->cargarVistaAdmin('productos/editar_producto', $data);
-        } else {
+        $idProducto = $this->request->getPost('id');
+        $data = [
+            'nombre' => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'caracteristicas' => $this->request->getPost('caracteristicas'),
+            'id_marca' => $this->request->getPost('marca'),
+            'id_categoria' => $this->request->getPost('categoria'),
+        ];
+        $this->productos->actualizarProducto($idProducto, $data);
+        $presentaciones = $this->request->getPost('presentaciones');
+        foreach ($presentaciones as $index => $presentacion) {
             $data = [
-                'nombre' => $this->request->getPost('nombre'),
-                'id_marca' => $this->request->getPost('marca'),
-                'id_categoria' => $this->request->getPost('categoria'),
-                'precio_compra' => $this->request->getPost('precioCompra'),
-                'precio_venta' => $this->request->getPost('precioVenta'),
-                'stock' => $this->request->getPost('stock'),
-                'contenido' => $this->request->getPost('contenido'),
-                'id_unidad' => $this->request->getPost('unidad'),
+                'id_sabor' => $presentacion['sabor'],
+                'id_unidad' => $presentacion['unidad'],
+                'stock' => $presentacion['stock'],
+                'precio_compra' => $presentacion['precio_compra'],
+                'precio_venta' => $presentacion['precio_venta'],
+                'contenido' => $presentacion['tamanio'],
             ];
-            $imagen = $this->request->getFile('imagen');
-            if ($imagen->isValid()) {
-                $nombreImagen = $imagen->getRandomName();
-                $imagen->move(ROOTPATH . 'assets/uploads', $nombreImagen);
-                $data['imagen'] = $nombreImagen;
+            $this->presentaciones->update($presentacion['index'], ($data));
+            if ($this->request->getFiles()) {
+                $imagenes = $this->request->getFiles()['presentaciones'][$index]['imagenes'];
+                foreach ($imagenes as $imagen) {
+                    $nombreImagen = $imagen->getRandomName();
+                    $imagen->move(ROOTPATH . 'assets/uploads', $nombreImagen);
+                    $data = [
+                        'id_presentacion' => $presentacion['index'],
+                        'nombre_imagen' => $nombreImagen
+                    ];
+                    $this->imagenesPresentaciones->insert($data);
+                }
             }
-            $this->productos->actualizarProducto($id, $data);
-            return redirect()->to('dashboard/productos')->with('success', 'Producto editado correctamente!');
-            ;
         }
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Producto Agregado Correctamente', 'redirect' => base_url('dashboard/productos')]);
     }
     public function validarFormulario($esNuevo)
     {
@@ -274,6 +296,10 @@ class Productos extends BaseController
         $sabores = $this->sabores->obtenerSaboresActivos();
         if (isset($id)) {
             $producto = $this->productos->obtenerProductoPorID($id);
+            $producto['presentaciones'] = $this->presentaciones->obtenerPresentaciones($id);
+            foreach ($producto['presentaciones'] as $index => $presentacion) {
+                $producto['presentaciones'][$index]['imagenes'] = explode(",", $presentacion["imagenes"]);
+            }
             return [
                 'validacion' => $this->validator,
                 'titulo' => $titulo,
@@ -281,7 +307,7 @@ class Productos extends BaseController
                 'unidades' => $unidades,
                 'marcas' => $marcas,
                 'producto' => $producto,
-                'sabores' => $sabores
+                'sabores' => $sabores,
             ];
         } else {
             return [

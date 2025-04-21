@@ -8,7 +8,9 @@ class Home extends BaseController
 {
     public function index()
     {
-        $data['titulo'] = 'Juancho\'s Lab';
+        $productosModel = new ProductosModel();
+        $productosPopulares = $productosModel->obtenerProductosClientes();
+        $data = ['titulo' => 'Juancho\'s Lab', 'productosPopulares' => $productosPopulares];
         $this->cargarVista('index', $data);
     }
     public function quienesSomos()

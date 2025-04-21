@@ -301,7 +301,7 @@ document.addEventListener("click", function (event) {
 
 
 // Event listener para detectar click en los toasts
-elements.contenedorToast.addEventListener('click', (e) => {
+elements.contenedorToast?.addEventListener('click', (e) => {
     if(elements.contenedorToast){
         const toastId = e.target.closest('div.toastp').id;
     
