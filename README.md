@@ -26,18 +26,18 @@
 
 ### Home
 
-![Home](screenshots/home.png)
+![Home](screenshots/home_1.png)
 
 ### Catálogo
 
 ![Catálogo](screenshots/catalogo.png)
 
-### Panel de administración
+### Productos
 
-![Admin Panel](screenshots/admin.png)
+![Productos_Listado](screenshots/listado_productos.png)
 
-### Carrito de compras
+### Login
 
-![Carrito](screenshots/carrito.png)
+![Login](screenshots/login.png)
 
 
