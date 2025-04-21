@@ -24,23 +24,27 @@
 
 ## 📸 Capturas de pantalla
 
-### Home
+## Home
 
 ![Home](screenshots/home_1.png)
 
-### Catálogo
+## Catálogo
 
 ![Catálogo](screenshots/catalogo.png)
 
-### Productos
+## Productos
 
-![Productos_Listado](screenshots/listado_productos.png)
+![Productos_Listado](screenshots/lista_productos.png)
 
 ![Productos_Formulario1](screenshots/formulario_producto.png)
 
 ![Productos_Formulario2](screenshots/formulario_producto2.png)
 
-### Login
+## Detalle Producto
+
+![Detalle_Producto](screenshots/detalle_producto.png)
+
+## Login
 
 ![Login](screenshots/login.png)
 
