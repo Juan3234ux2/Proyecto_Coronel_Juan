@@ -28,6 +28,8 @@
 
 ![Home](screenshots/home_1.png)
 
+![Home2](screenshots/home_2.png)
+
 ## Catálogo
 
 ![Catálogo](screenshots/catalogo.png)
