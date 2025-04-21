@@ -14,17 +14,15 @@
 ## 🚀 Funcionalidades principales
 
 - 🏠 **Home** con productos destacados y acceso rápido al catálogo  
-- 📦 **Catálogo de productos** con filtros por marca y categoría  
-- 🧃 **CRUD de productos** con imagen, descripción, precio y stock  
-- 🏷️ **Gestión de marcas y categorías**  
+- 📦 **Catálogo de productos** con filtros por marca, sabor, categoría, y precio 
+- 🧃 **CRUD de productos** con distintas variantes (tamaños, sabores)  
+- 🏷️ **Gestión de marcas, sabores y categorías**  
 - 🔐 **Sistema de autenticación** (login y registro de usuarios)  
 - 🛒 **Carrito de compras** con persistencia en sesión  
 - 🧑‍💼 **Panel de administración** para gestionar el contenido  
 - 📄 **Vistas dinámicas** con controladores y rutas limpias  
 
 ## 📸 Capturas de pantalla
-
-> ⚠️ Asegurate de subir las imágenes a una carpeta `/screenshots` en tu repo y ajustar las rutas.
 
 ### Home
 
@@ -42,5 +40,4 @@
 
 ![Carrito](screenshots/carrito.png)
 
-## 📁 Estructura del proyecto (simplificada)
 
