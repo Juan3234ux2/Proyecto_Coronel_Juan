@@ -36,6 +36,10 @@
 
 ![Productos_Listado](screenshots/listado_productos.png)
 
+![Productos_Formulario1](screenshots/formulario_producto.png)
+
+![Productos_Formulario2](screenshots/formulario_producto2.png)
+
 ### Login
 
 ![Login](screenshots/login.png)
