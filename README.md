@@ -24,20 +24,30 @@
 
 ## 📸 Capturas de pantalla
 
-### Home
+## Home
 
-![Home](screenshots/home.png)
+![Home](screenshots/home_1.png)
 
-### Catálogo
+![Home2](screenshots/home_2.png)
+
+## Catálogo
 
 ![Catálogo](screenshots/catalogo.png)
 
-### Panel de administración
+## Productos
 
-![Admin Panel](screenshots/admin.png)
+![Productos_Listado](screenshots/lista_productos.png)
 
-### Carrito de compras
+![Productos_Formulario1](screenshots/formulario_producto.png)
 
-![Carrito](screenshots/carrito.png)
+![Productos_Formulario2](screenshots/formulario_producto2.png)
+
+## Detalle Producto
+
+![Detalle_Producto](screenshots/detalle_producto.png)
+
+## Login
+
+![Login](screenshots/login.png)
 
 
